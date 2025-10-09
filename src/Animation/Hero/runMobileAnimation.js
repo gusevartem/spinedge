@@ -8,13 +8,13 @@ export const runMobileAnimation = (refs) => {
 
     if (!overlayRef?.current || !ballRef?.current || !mainRef?.current) return;
 
-
+    // === Overlay: плавное исчезновение ===
+    overlayRef.current.style.opacity = 0;
+    overlayRef.current.style.display = "block";
     overlayRef.current.style.willChange = "opacity";
-    ballRef.current.style.willChange = "transform, opacity";
-
 
     gsap.to(overlayRef.current, {
-        opacity: 0,
+        autoAlpha: 0, // opacity + visibility
         duration: 0.8,
         ease: "power2.inOut",
         delay: 0.2,
@@ -25,6 +25,16 @@ export const runMobileAnimation = (refs) => {
         },
     });
 
+    // === Обёртка для ballRef для безопасного pin ===
+    const ballWrapper = document.createElement("div");
+    ballWrapper.style.position = "relative";
+    ballRef.current.parentNode.insertBefore(ballWrapper, ballRef.current);
+    ballWrapper.appendChild(ballRef.current);
+    ballWrapper.style.willChange = "transform";
+
+    ballRef.current.style.willChange = "transform, opacity";
+
+    // === Анимация с ScrollTrigger ===
     gsap.fromTo(
         ballRef.current,
         { scale: 1, transformOrigin: "50% 50%" },
@@ -34,20 +44,19 @@ export const runMobileAnimation = (refs) => {
             force3D: true,
             overwrite: "auto",
             scrollTrigger: {
-                trigger: ballRef.current,
+                trigger: ballWrapper,
                 start: "50% 20%",
                 endTrigger: mainRef.current,
                 end: "bottom+=200 top",
                 scrub: 1,
                 pin: true,
-                anticipatePin: 1,
+                pinSpacing: false,       // важно для Safari
+                anticipatePin: 2,        // повышаем anticipation
                 invalidateOnRefresh: true,
-                immediateRender: false,
+                immediateRender: true,   // избегаем проблем с первой отрисовкой
             },
         }
     );
-
-
 
     return ScrollTrigger.getAll();
 };
