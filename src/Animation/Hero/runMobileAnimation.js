@@ -6,7 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 export const runMobileAnimation = (refs) => {
     const { overlayRef, ballRef, mainRef } = refs;
 
-    if (!overlayRef.current || !ballRef.current || !mainRef.current) return;
+    if (!overlayRef?.current || !ballRef?.current || !mainRef?.current) return;
+
+
+    overlayRef.current.style.willChange = "opacity";
+    ballRef.current.style.willChange = "transform, opacity";
+
+
     gsap.to(overlayRef.current, {
         opacity: 0,
         duration: 0.8,
@@ -41,6 +47,7 @@ export const runMobileAnimation = (refs) => {
         }
     );
 
-    ballRef.current.style.willChange = "transform, opacity";
-    overlayRef.current.style.willChange = "opacity";
+
+
+    return ScrollTrigger.getAll();
 };
