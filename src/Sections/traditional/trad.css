@@ -1,0 +1,264 @@
+.TraditionalSec {
+    box-sizing: border-box;
+    padding: 20px 50px 100px 0;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: black;
+    margin-top: -50px;
+    overflow: visible;
+}
+
+.tradShum1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    object-fit: cover;
+}
+
+.TradCorner2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.Shadow1 {
+    background: #00DA904D;
+    filter: blur(85px);
+    position: absolute;
+    height: 100%;
+    width: 70px;
+    transform: rotate(-30deg);
+    left: 100px;
+    z-index: 2;
+}
+
+.Shadow2 {
+    background: #00DA904D;
+    filter: blur(85px);
+    position: absolute;
+    height: 100%;
+    width: 70px;
+    transform: rotate(60deg);
+    right: 100px;
+    top: 0;
+    z-index: 2;
+}
+
+.Shadow3 {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 223, 255, 0.6) 0%, rgba(0, 171, 201, 0.6) 100%);
+    filter: blur(125px);
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    right: 0;
+    bottom: 50px;
+    z-index: 2;
+}
+
+.TraditionalBody {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+
+
+.TradInfoBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    position: relative;
+    z-index: 3;
+    justify-content: center;
+}
+
+.TradTitle {
+    font-size: 13px;
+    font-weight: 400;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #00DA90 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+.TradSubtitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, #E1FFDE 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    font-size: 37px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.TradText {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+
+    span {
+        background: radial-gradient(91.74% 158.57% at 50% 50%, #00E599 0%, rgba(0, 229, 153, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+.GifWrap {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    min-width: 450px;
+    height: 400px;
+}
+
+.TradGif {
+    width: 100%;
+    height: 100%;
+}
+
+.CetnerText {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    text-wrap: nowrap;
+    transform: translate(-50%, -50%);
+    padding: 6px 7px;
+}
+
+.TradSubInfo {
+    z-index: 3;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid #FFFFFF0D;
+    backdrop-filter: blur(25px);
+    background: #FFFFFF03;
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.TradPlata {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 180px;
+}
+
+.TradSubBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-left: 2px solid #00E599;
+    padding-left: 15px;
+}
+
+.TradSubTitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.TradSubText {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.TradCorner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.TradSubInfoClone {
+    display: none;
+
+    
+}
+
+.TradPlataMob {
+    position: absolute;
+    bottom: 0;
+    display: none;
+    right: 0;
+}
+
+@media screen and (max-width: 1050px) {
+    .TraditionalBody {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .TradTitle {
+        font-size: 10px;
+    }
+
+    .TradSubtitle {
+        font-size: 23px;
+        line-height: 28px;
+    }
+
+    .TradPlataMob {
+        width: 60px;
+        display: block;
+    }
+
+    .TradPlata {
+        display: none;
+    }
+
+    .TraditionalSec {
+        padding: 15px;
+        background: none;
+        margin-top: 100px;
+    }
+
+    .TradText {
+        font-size: 12px;
+    }
+
+    .TradSubInfo {
+        display: none;
+    }
+
+    .TradSubInfoClone {
+        display: block;
+        padding: 15px 15px 25px 15px;
+        margin-top: 0;
+    }
+
+    .TradSubTitle {
+        font-size: 19px;
+    }
+
+    .TradSubText {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,14 @@
+.FourSec {}
+
+@media screen and (max-width: 1300px) {
+    .FourSec {
+        padding-left: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .FourSec {
+        padding-top: 80px;
+        padding-left: 20px;
+    }
+}

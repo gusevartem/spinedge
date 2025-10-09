@@ -1,0 +1,205 @@
+.BenefitsSec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 100px 10px;
+    overflow: hidden;
+    width: calc(100% + 40px);
+    left: 0;
+    position: relative;
+    background: var(--color-black);
+}
+
+.BenefitsBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.benefitsCenterShadow {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 223, 255, 0.3) 0%, rgba(0, 171, 201, 0.8) 100%);
+    position: absolute;
+    border-radius: 80%;
+    width: 50px;
+    height: 100%;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(80px);
+}
+
+.BenefitsCar1 {
+    position: absolute;
+    max-width: 370px;
+    left: 0;
+    bottom: 0;
+    z-index: 15;
+}
+
+.BenefitsCar2 {
+    position: absolute;
+    max-width: 450px;
+    right: 0;
+    bottom: 0;
+    z-index: 15;
+}
+
+.BenefitsTitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    font-size: 37px;
+    font-weight: 700;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.BenefitsText {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.BenefitsList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+    margin-bottom: 140px;
+}
+
+.BenefitsListItem {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.BenefitsListItemNum {
+    width: fit-content;
+    width: 65px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    font-weight: 700;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #00E599 0%, rgba(0, 229, 153, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+.BenefitsListItemTitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    font-size: 23px;
+    font-weight: 700;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.BenefitsListItemText {
+    font-weight: 400;
+    max-width: 380px;
+    font-size: 15px;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.BenefitsCorner1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.BenefitsCorner2 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1000px) {
+    .BenefitsTitle {
+        font-size: 23px;
+        line-height: 28px;
+        margin-bottom: 10px;
+    }
+
+    .BenefitsListItem {
+        gap: 10px;
+    }
+
+    .BenefitsList {
+        margin-bottom: 100px;
+    }
+
+    .BenefitsText, .BenefitsListItemText {
+        max-width: 290px;
+    }
+
+    .BenefitsCar1 {
+        max-width: 200px;
+    }
+
+    .BenefitsListItemNum {
+        width: 50px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .BenefitsCorner1, .BenefitsCorner2 {
+        width: 20px;
+    }
+
+    .BenefitsCar2 {
+        max-width: 300px;
+    }
+
+    .BenefitsText {
+        font-size: 12px;
+    }
+
+    .BenefitsList {
+        gap: 25px;
+        flex-direction: column;
+    }
+
+    .WordsBlur {
+        left: 50% !important;
+        width: 300px;
+        height: 300px;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .BenefitsListItemTitle {
+        font-size: 19px;
+    }
+
+    .BenefitsListItemText {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .BenefitsCar1 {
+        max-width: 160px;
+    }
+
+    .BenefitsCar2 {
+        max-width: 180px;
+    }
+}

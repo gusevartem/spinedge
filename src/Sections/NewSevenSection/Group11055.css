@@ -1,0 +1,72 @@
+.group-1105-5,
+.group-1105-5 * {
+    box-sizing: border-box;
+}
+
+.group-1105-5 {
+    position: relative;
+    background: rgba(3, 4, 3, 0.55);
+    border-radius: 10px 0px 10px 0px;
+    backdrop-filter: blur(7.5px);
+    padding: 10px 10px;
+    width: fit-content;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SVG слева сверху */
+.group-1105-5 .group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 51px;
+}
+
+/* SVG справа снизу */
+.group-1105-5 .group2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35px;
+    height: 51px;
+}
+
+.group-1105-5 .frame-1410103863 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.group-1105-5 .haifa-israel {
+    background: radial-gradient(closest-side,
+            rgba(225, 255, 222, 1) 0%,
+            rgba(225, 255, 222, 0.7) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-family: "Orbitron-Bold", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .group-1105-5 {
+        padding: 14px;
+        max-width: 90%
+    }
+
+    .group-1105-5 .frame-1410103863 {
+        padding: 0 0;
+    }
+
+    .group-1105-5 .haifa-israel {
+        font-size: 10px;
+    }
+}

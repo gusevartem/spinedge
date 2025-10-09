@@ -1,0 +1,10 @@
+.group,
+.group * {
+    box-sizing: border-box;
+}
+
+.group {
+    height: auto;
+    position: relative;
+    overflow: visible;
+}

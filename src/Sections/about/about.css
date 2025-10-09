@@ -1,0 +1,845 @@
+.AboutSec {
+    box-sizing: border-box;
+    padding: 180px 20px 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: var(--color-black);
+}
+
+.heroShum {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+}
+
+.AboutCenterShadow {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 223, 255, 0.6) 0%, rgba(0, 171, 201, 0.6) 100%);
+    position: absolute;
+    border-radius: 40%;
+    width: 155px;
+    height: 100%;
+    top: -150px;
+    left: 50%;
+    transform: rotate(180deg);
+    transform: translateX(-50%);
+    filter: blur(180px);
+}
+
+.aboutShum1 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.aboutShum2 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 100vh;
+}
+
+.aboutShum3 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 200vh
+}
+.aboutShum4 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 300vh
+}
+.aboutShum5 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 400vh
+}
+.aboutShum6 {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    position: absolute;
+    top: 500vh
+}
+
+.LinesBg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100%;
+}
+.LinesBg2 {
+    position: absolute;
+    left: -50%;
+    top: 50px;
+    width: 100%;
+}
+
+.FiguraBg {
+    position: absolute;
+    top: 200px;
+    right: -120px;
+    width: 100%;
+    height: 1500px;
+}
+
+.AboutBody {
+    max-width: 1100px;
+    width: 100%;
+}
+
+.FirstBlock {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 35px;
+}
+
+.ImgWrap {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.PlaceImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.ImgInfoBlock {
+    position: absolute;
+    bottom: 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    padding: 10px;
+    background: #0304038C;
+    backdrop-filter: blur(15px);
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    gap: 5px;
+}
+
+.AboutGpt1 {
+    background: #00DA9033;
+    height: 90px;
+    width: 50%;
+    position: absolute;
+    filter: blur(85px);
+    top: 200px;
+    left: -100px;
+    transform: rotate(30deg);
+}
+
+.AboutGpt2 {
+    background: #00DA9033;
+    height: 90px;
+    width: 50%;
+    position: absolute;
+    filter: blur(100px);
+    top: 200px;
+    right: -100px;
+    transform: rotate(-30deg);
+}
+
+.ImgInfoTitle {
+    font-size: 15px;
+    font-weight: 700;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #586b58 0%, rgba(225, 255, 222, 0.1) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+.ImgInfoText {
+    font-size: 15px;
+    font-weight: 700;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.AboutCorner1 {
+    left: -1px;
+    top: -1px;
+    position: absolute;
+    width: 30px;
+}
+
+.AboutCorner2 {
+    right: -1px;
+    bottom: -1px;
+    position: absolute;
+    width: 30px;
+    transform: rotate(180deg);
+}
+
+.FirstInfoBlock {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.MiniSectNum {
+    min-width: 65px;
+    max-width: 65px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    text-align: center;
+}
+
+.MiniSectNum > p {
+    font-size: 19px;
+}
+
+.FirstInfoTitle {
+    font-size: 37px;
+    font-weight: 700;
+    line-height: 43px;
+    background: radial-gradient(
+        91.74% 158.57% at 50% 50%, 
+        rgba(225, 255, 222, 0.4) 0%, 
+        rgba(225, 255, 222, 0.4) 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+   
+    span {
+         background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    
+}
+
+.FirstInfoText {
+    font-size: 15px;
+    font-weight: 400;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+
+}
+
+.FirstInfoText > span {
+    font-weight: 800;
+}
+
+.AboutSubtitle {
+    margin-top: 25px;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #00DA90 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.SecondBlock {
+    margin-top: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.SecondTitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.SecondList {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &Item {
+        
+    }
+}
+
+.SecondListItem {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.SecondListItemText {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.IcoWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: #FFFFFF14;
+}
+
+.IcoWrap > img {
+    width: 45%;
+    height: 45%;
+}
+
+.ThirdBlock {
+    margin-top: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid #FFFFFF1A;
+}
+
+.ThirdRightBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.CompanyList {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.CompanyList1 > img:nth-child(1) {
+    width: 60px;
+    height: 52px;
+}
+
+.CompanyList1 > img:nth-child(2) {
+    width: 63px;
+    height: 35px;
+}
+
+.CompanyList1 > img:nth-child(3) {
+    width: 82px;
+    height: 33px;
+}
+
+.CompanyList1 > img:nth-child(4) {
+    width: 84px;
+    height: 28px;
+}
+
+/* /// */
+
+.CompanyList2 > img:nth-child(1) {
+    width: 83px;
+    height: 28px;
+}
+
+.CompanyList2 > img:nth-child(2) {
+    width: 115px;
+    height: 33px;
+}
+
+.CompanyList2 > img:nth-child(3) {
+    width: 60px;
+    height: 37px;
+}
+
+.CompanyList2 > img:nth-child(4) {
+    width: 42px;
+    height: 32px;
+}
+
+/*  */
+
+.CompanyList3 > img:nth-child(1) {
+    width: 50px;
+    height: 33px;
+}
+
+.CompanyList3 > img:nth-child(2) {
+    width: 73px;
+    height: 17px;
+}
+
+.CompanyList3 > img:nth-child(3) {
+    width: 42px;
+    height: 36px;
+}
+
+.CompanyList3 > img:nth-child(4) {
+    width: 54px;
+    height: 36px;
+}
+
+.ThirdLeftBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.CompanyImg {
+    width: 60px;
+}
+
+
+.ThirdBlockTitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 37px;
+}
+
+.ThirdBlockText {
+    font-size: 15px;
+    font-weight: 400;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.Founders {
+    padding-bottom: 80px;
+    border-bottom: 1px solid #FFFFFF1A;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Founders:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.SlideImg {
+    display: none;
+}
+
+.FoundersTitle {
+    background: radial-gradient(
+        91.74% 158.57% at 50% 50%, 
+        rgba(225, 255, 222, 0.4) 0%, 
+        rgba(225, 255, 222, 0.4) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.FounderImg {
+    width: 70px;
+    height: 70px;
+}
+
+.FoundersTopGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.FounderInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.FounderInfoTitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.FounderInfoSubtitle {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.FoundersList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.FoundersText {
+    background:
+    radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.10) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.ImgWrapClone {
+    display: none;
+}
+
+.AdvisorsAboutSwiper {
+    display: none;
+}
+
+.AdvisorsAboutList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.FiguraBgMob {
+    display: none;
+}
+
+@media screen and (min-width: 1300px) {
+    .AnimatedCircle {
+        top: 20px;
+        left: 10px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .ThirdBlock {
+        padding-top: 40px;
+    }
+    
+    .MiniSectNum > img {
+        width: 15px;
+    }
+
+
+    .CompanyList1 > img:nth-child(1) {
+        width: 40px;
+        height: 34px;
+    }
+    
+    .CompanyList1 > img:nth-child(2) {
+        width: 42px;
+        height: 22px;
+    }
+    
+    .CompanyList1 > img:nth-child(3) {
+        width: 57px;
+        height: 23px;
+    }
+    
+    .CompanyList1 > img:nth-child(4) {
+        width: 55px;
+        height: 18px;
+    }
+
+    .CompanyList1 > img:nth-child(5) {
+        width: 54px;
+        height: 18px;
+    }
+    
+    /* /// */
+    
+    .CompanyList2 > img:nth-child(1) {
+        width: 77px;
+        height: 22px;
+    }
+    
+    .CompanyList2 > img:nth-child(2) {
+        width: 38px;
+        height: 24px;
+    }
+    
+    .CompanyList2 > img:nth-child(3) {
+        width: 27px;
+        height: 21px;
+    }
+    
+    .CompanyList2 > img:nth-child(4) {
+        width: 32px;
+        height: 21px;
+    }
+
+    .CompanyList2 > img:nth-child(5) {
+        width: 47px;
+        height: 11px;
+    }
+    
+    /*  */
+    
+    .CompanyList3 > img:nth-child(1) {
+        width: 26px;
+        height: 23px;
+    }
+    
+    .CompanyList3 > img:nth-child(2) {
+        width: 35px;
+        height: 23px;
+    }
+}
+
+@media screen and (max-width: 910px) {
+
+
+    .AboutCenterShadow {
+        filter: blur(120px);
+        width: 100px;
+    }
+
+    .ThirdBlock  {
+        padding-bottom: 30px;
+    }
+
+    .Founders {
+        padding-bottom: 25px;
+        margin-top: 25px;
+    }
+
+    .FoundersText {
+        margin-top: 7px;
+    }
+
+    .ThirdBlock {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ImgInfoTitle {
+        font-size: 11px;
+    }
+
+    .MiniSectNum > p {
+        font-size: 10px;
+    }
+
+    .MiniSectNum {
+        max-width: 42px;
+        min-width: 42px;
+        height: 30px;
+    }
+
+    .ImgInfoText {
+        font-size: 11px;
+    }
+
+    .SecondTitle {
+        font-size: 19px;
+    }
+    
+    .ImgInfoBlock {
+        max-width: 80%;
+    }
+
+    .BottomTitle {
+        font-size: 35px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .AboutSubtitle {
+        font-size: 10px;
+    }
+
+    .ThirdBlockText {
+        font-size: 12px;
+    }
+
+    .ThirdBlockTitle {
+        font-size: 23px;
+    }
+
+    .FiguraBg {
+        display: none;
+    }
+
+    .FiguraBgMob {
+        display: block;
+        width: calc(100% + 85px);
+        height: 500px;
+        position: absolute;
+        top: -20px;
+        right: -55px;
+        max-width: 150% !important;
+    }
+
+    .SecondList {
+        margin-top: 30px;
+    }
+
+    .FoundersTitle {
+        font-size: 23px;
+    }
+
+    .FounderInfoTitle {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    .FounderImg {
+        width: 45px;
+        height: 45px;
+    }
+
+    .FounderInfoSubtitle  {
+        font-size: 8px;
+        margin-top: 5px;
+    }
+
+    .FoundersText {
+        font-size: 10px;
+    }
+
+    .ThirdBlock {
+        margin-top: 100px;
+    }
+
+    .SecondListItemText  {
+        font-size: 13px;
+    }
+
+    .SecondListItem {
+        justify-content: start;
+    }
+
+    .AboutSec {
+        padding: 75px 15px 20px 15px;
+    }
+
+    .AdvisorsAboutSwiper {
+        display: flex;
+    }
+
+    .AdvisorsAboutList {
+        display: none;
+    }
+    
+    .FoundersTopGroup {
+        flex-direction: column;
+    }
+
+    .ThirdBlockTitle {
+        font-size: 23px;
+        line-height: 25px;
+    }
+
+    .BenefitsShd {
+        display: none;
+    }
+
+    .FoundersTitle {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .SlideImg {
+        display: block;
+        width: 25px;
+        height: 25px;
+    }
+
+    .FirstBlock {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .ImgWrap {
+        display: none;
+    }
+
+    .ImgWrapClone {
+        display: block;
+        width: 100%;
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .ThirdBlockText, .FirstInfoText{
+        font-size: 12px;
+
+    }
+    
+    .FirstInfoTitle {
+        font-size: 23px;
+        line-height: 25px;
+    }
+
+    .SecondList {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .FirstFoneBlock {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .FirstFoneBgSome {
+        height: 100vh;
+    }
+}

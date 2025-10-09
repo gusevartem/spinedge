@@ -1,0 +1,275 @@
+.AnalogData {
+    right: 380px;
+    position: absolute !important;
+}
+
+body {
+    overflow: clip;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.fourShum1 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.fourShum2 {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    top: 100vh;
+    left: 0;
+}
+
+.FourShadowCenter {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 223, 255, 0.3) 0%, rgba(0, 171, 201, 0.8) 100%);
+    position: absolute;
+    border-radius: 80%;
+    width: 15%;
+    height: 100%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(450px);
+}
+
+.fourShum3 {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    top: 200vh;
+    left: 0;
+}
+
+.FourShadow {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.AnalogInference {
+    right: 50px;
+    position: absolute !important;
+}
+
+.AnalogOutput {
+    position: absolute !important;
+    right: 90px;
+    bottom: 300px;
+}
+
+.IntegrationWith {
+    position: absolute !important;
+    bottom: 320px;
+    right: 350px;
+}
+
+.Spintronic {
+    position: absolute !important;
+    bottom: 320px;
+    right: 580px;
+}
+
+.FourMini {
+    bottom: 410px;
+    right: 550px;
+}
+
+@media screen and (max-width: 1300px) {
+    .Spintronic {
+        bottom: 220px;
+        right: 500px;
+    }
+
+    .FourMini {
+        right: 580px;
+        bottom: 320px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .SpintronicMob {
+        top: 100px;
+        right: 200px;
+    }
+
+    .MiniMob {
+        right: 200px;
+        top: 60px;
+    }
+
+    .AnalogInference {
+        top: -50px !important;
+    }
+
+    .AnalogData {
+        top: 20px !important;
+    }
+
+    .FourImageWrap {
+        /* position: relative !important; */
+    }
+
+    .FourImageLine {
+        width: 200px;
+        top: 140px !important;
+    }
+
+    .FourImageLine > img {
+        width: 200px;
+    }
+
+    .Spintronic {
+        right: 440px;
+        display: block !important;
+        bottom: 420px !important;
+    }
+
+    .FourMini {
+        display: block !important;
+        right: 430px;
+        bottom: 480px !important;
+    }
+
+    .FourListWrap {
+        /* margin-top: 300px; */
+    }
+
+    .FourImageLine > div:last-child {
+        width: 120px !important;
+        height: 120px !important;
+        top: 15px;
+        left: 30px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .FourImageLine {
+        right: 350px;
+    }
+
+    .FourBottomGroup {
+        margin-bottom: 0;
+        flex-direction: column;
+        margin-top: 85px;
+    }
+
+    .AnalogInference {
+        right: 0;
+    }
+
+    .AnalogOutput {
+        bottom: 350px;
+        right: 0;
+    }
+
+    .IntegrationWith {
+        bottom: 230px;
+        right: 300px;
+    }
+
+    .AnalogData {
+        right: 300px;
+        width: 100px !important;
+    }
+
+    .Spintronic {
+        bottom: 300px !important;
+        right: 310px !important;
+    }
+
+    .FourMini {
+        right: 310px;
+        bottom: 360px !important;
+    }
+
+    .FourListWrap {
+        /* margin-top: -150px; */
+    }
+
+    
+}
+
+@media screen and (max-width: 550px) {
+    .FourImageLine > div:last-child {
+        width: 100px !important;
+        height: 100px !important;
+        top: -10px;
+        left: 40px;
+    }
+
+    .FourImageLine > img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .FourMini {
+        right: 300px;
+        bottom: 310px !important;
+    }
+
+    .Spintronic {
+        bottom: 250px !important;
+        right: 300px !important;
+    }
+
+    .FourImageLine {
+        right: 240px;
+        top: 120px !important;
+    }
+
+    .IntegrationWith {
+        width: 130px !important;
+        bottom: 170px;
+        right: 250px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .AnalogData {
+        right: 220px !important;
+        top: -20px !important;
+    }
+
+    .FourMini {
+        right: 270px;
+        bottom: 310px !important;
+    }
+
+    .Spintronic {
+        bottom: 250px !important;
+        right: 270px !important;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .Spintronic {
+        right: 240px !important;
+    }
+
+    .FourMini {
+        right: 240px;
+    }
+
+    .IntegrationWith {
+        right: 210px;
+    }
+}
+
+@media screen and (max-width: 400px)  {
+    .FourImageLine {
+        right: 180px;
+    }
+}

@@ -1,0 +1,234 @@
+.OffersSec {
+    box-sizing: border-box;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-black);
+    align-items: center;
+    position: relative;
+}
+
+.OffersShadow1 {
+    position: absolute;
+    height: 70px;
+    width: 60%;
+    background: #00DA9033;
+    filter: blur(90px);
+    left: -100px;
+    transform: rotate(30deg);
+}
+
+.OffersShadow2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    filter: blur(90px);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 223, 255, 0.3) 0%, rgba(0, 171, 201, 0.8) 100%);
+}
+
+.OffersBody {
+    overflow: hidden;
+    border: 1px solid #FFFFFF0D;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 70%;
+    box-sizing: border-box;
+    padding: 100px 620px 100px 70px;
+    backdrop-filter: blur(25px);
+    position: relative;
+}
+
+.CenterShadow {
+    background: linear-gradient(180deg, rgba(133, 233, 255, 0.5) 0%, rgba(133, 233, 255, 0) 94.95%);
+    position: absolute;
+    border-radius: 80%;
+    width: 65px;
+    height: 100%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(25px);
+}
+
+.Corner1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.Corner2 {
+    position: absolute;
+    top: 0;
+    transform: rotate(180deg);
+    right: 0;
+    z-index: 2;
+}
+
+.LeftGroup {
+    position: relative;
+    z-index: 2;
+    gap: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Title {
+    font-size: 37px;
+    line-height: 40px;
+    font-weight: 700;
+    background: red /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    p {
+        background: radial-gradient(
+  91.74% 158.57% at 50% 50%, 
+  rgba(225, 255, 222, 0.4) 0%, 
+  rgba(225, 255, 222, 0.4) 100%
+);
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    @media screen and (max-width: 1600px) {
+        font-size: 32px;
+    }
+}
+
+
+.Text {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+    max-width: 500px;
+    font-weight: 400;
+}
+
+.MobLight {
+    
+}
+
+.Plata {
+    width: 100%;
+    height: 100%;
+}
+
+.PlataWrap {
+    position: absolute;
+    right: 100px;
+    top: -100px;
+    max-width: 1000px;
+}
+
+.OffersSpin {
+    left: 39%;
+    top: 36%;
+    transform: translate(-50%, -50%);
+}
+
+
+@media screen and (max-width: 1600px) {
+    .PlataWrap {
+        max-width: 850px;
+        top: -100px;
+        right: -50px;
+    }
+
+    .OffersBody {
+        padding: 50px 480px 50px 70px;
+        max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .PlataWrap {
+        top: -50px;
+        right: -100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .LeftGroup {
+        width: 100%;
+        position: relative;
+        padding-bottom: 350px;
+        gap: 15px;
+    }
+
+    .OffersShadow2 {
+        width: 240px;
+        height: 240px;
+        bottom: 150px;
+        
+    }
+
+    .OffersSpin {
+        left: 37%;
+        top: 34%;
+    }
+
+    .Title {
+        font-size: 23px;
+        line-height: 28px;
+    }
+
+    .Text {
+        font-size: 12px;
+    }
+
+    .PlataWrap {
+        bottom: -50px;
+        top: auto;
+        width: 650px;
+        max-width: 1000px;
+        height: 650px;
+        right: auto;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .OffersSec {
+        overflow: hidden;
+    }
+
+    .OffersBody {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        max-width: 100%;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .PlataWrap {
+        width: 580px;
+        height: 580px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .MobLight {
+        left: -30px;
+    }
+
+    .MobLightLine {
+        width: 180px;
+    }
+
+    .MobLightCircle {
+        left: 20px;
+        top: 10px;
+    }
+}

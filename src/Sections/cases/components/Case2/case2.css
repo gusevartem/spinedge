@@ -1,0 +1,245 @@
+.Case2Block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.CaseBody {
+    border: 1px solid #FFFFFF0D;
+    background: #FFFFFF03;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 0 13px 0 13px;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 430px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.Case2Corner1 {
+    transform: rotate(180deg);
+    position: absolute;
+    left:0;
+    bottom: 0;
+}
+
+.Case2Corner2 {
+    transform: rotate(0deg);
+    position: absolute;
+    right:0;
+    top: 0;
+}
+
+.Case2Text {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Case2Text {
+    text-transform: uppercase;
+    color: #00E599;
+    max-width: 370px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.TextGroup {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Case2ImagesGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.Drone {
+    max-width: 300px;
+    position: absolute;
+    top: -30px;
+    left: 20%;
+}
+
+.Case2Car1 {
+    position: absolute;
+    bottom: -30px;
+    left: 10%;
+    max-width: 280px;
+}
+
+.Case2Car2 {
+    position: absolute;
+    bottom: -30px;
+    max-width: 320px;
+    right: -30px;
+}
+
+.Case2Plata {
+    max-width: 90px;
+    z-index: 2;
+    position: relative;
+}
+
+.Case2CenterImgWrap {
+    position: relative;
+}
+
+.Case2Spin {
+    z-index: 3;
+    position: absolute;
+    left: 7%;
+    top: 7%;
+    transform: translate(-50%, -50%);
+}
+
+.Case2Line1 {
+    width: 110px;
+    height: 110px;
+    top: calc(-100% - 25px);
+    left: 0%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 1;
+}
+
+.Case2Line2 {
+    min-width: 120px;
+    height: 140px;
+    position: absolute;
+    z-index: 1;
+    right: calc(-100% - 30px);
+    top: 40%;
+}
+
+.Case2Car2Mob {
+    display: none;
+}
+
+.Case2Line3 {
+    min-width: 130px;
+    height: 85px;
+    z-index: 1;
+    position: absolute;
+    left: calc(-100% - 45px);
+    top: 40%;
+}
+
+.CaseText2Clone {
+    display: none;
+}
+
+.Case2Line1Mob, .Case2Line2Mob, .Case2Line3Mob {
+    display: none;
+}
+
+.DroneMob, .Case2Car1Mob {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .Case2Text2 {
+        display: none;
+    }
+
+    .CaseText2Clone {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Case2Spin {
+        left: 7%;
+        top: 5%;
+    }
+
+    .CaseBody {
+        display: flex;
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .Case2ImagesGroup {
+        width: 100%;
+        height: 400px;
+    }
+
+    .Case2Line1, .Case2Line2, .Case2Line3 {
+        display: none;
+    }
+
+    .Case2Line1Mob, .Case2Line2Mob, .Case2Line3Mob {
+        display: block;
+        position: absolute;
+    }
+
+    .Case2Line1Mob {
+        bottom: 100%;
+        left: 68%;
+        transform: translateX(-50%);
+    }
+
+    .Case2Line2Mob {
+        left: 100%;
+        top: 47%;
+    }
+
+    .Case2Line3Mob {
+        right: 100%;
+        top: 47%;
+    }
+
+    .Drone, .Case2Car1 {
+        display: none;
+    }
+
+    .DroneMob, .Case2Car1Mob {
+        display: block;
+        position: absolute;
+    }
+
+    .DroneMob {
+        top: 20px;
+        max-width: 150px;
+        left: 45%;
+    }
+
+    .Case2Text {
+        font-size: 13px;
+    }
+
+    .Case2Car2 {
+        max-width: 180px;
+        top: 45%;
+        display: none;
+    }
+
+    .Case2Car2Mob {
+        display: block;
+        position: absolute;
+        max-width: 200px;
+        top: 180px;
+        left: 57%;
+    }
+    
+    .Case2Car1Mob {
+        left: 50%;
+        transform: translateX(-130%);
+        top: 53%;
+        max-width: 140px;
+    }
+}

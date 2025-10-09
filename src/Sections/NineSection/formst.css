@@ -1,0 +1,35 @@
+.FooterTitlesList {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 730px;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.FooterSubtitle {
+    text-transform: uppercase;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #00DA90 0%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 800px) {
+    .FooterTitlesList {
+        padding: 0 18px;
+        display: none;
+    }
+
+    .FooterSubtitle {
+        font-size: 10px;
+    }
+
+    .FormLol {
+        width: calc(100% - 40px);
+        margin: 0 20px;
+    }
+}

@@ -1,0 +1,80 @@
+.HeroText {
+
+    span {
+        background: radial-gradient(61.22% 61.22% at 82.4% 27.62%, #00BA7C 0%, #00E599 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
+
+.Title {
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    font-size: 77px;
+    font-weight: 700;
+    letter-spacing: 40px;
+}
+
+.Text1 {
+    background: linear-gradient(0deg, #00E599, #00E599); 
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 25px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.Text2 {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@media screen and (max-width: 770px) {
+    .Title {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Title {
+        letter-spacing: 20px;
+        margin-left: 30px;
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    .Text2 {
+        font-size: 12px;
+    }
+
+    .Text1 {
+        font-size: 15px;
+        margin-bottom: 10px;
+        line-height: 17px;
+    }
+
+    .Text1 {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .Title {
+        letter-spacing: 20px;
+        margin-left: 30px;
+        font-size: 27px;
+    }
+}

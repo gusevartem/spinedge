@@ -1,0 +1,19 @@
+.rectangle-8421,
+.rectangle-8421 * {
+    box-sizing: border-box;
+}
+
+.rectangle-8421 {
+    background: radial-gradient(closest-side,
+            rgba(0, 223, 255, 0.5) 0%,
+            rgba(0, 171, 201, 0.5) 100%);
+    width: 119px;
+    height: 1057px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform-origin: 0 0;
+
+    transform: rotate(-90deg) scale(1, 1);
+    filter: blur(175px);
+}
