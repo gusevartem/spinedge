@@ -16,34 +16,6 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({ anticipatePin: 1 });
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // 1️⃣ Ждем загрузки всех изображений на странице
-    const images = Array.from(document.images);
-    const imagePromises = images.map(
-      (img) =>
-        new Promise((resolve) => {
-          if (img.complete) resolve();
-          else {
-            img.onload = img.onerror = resolve;
-          }
-        })
-    );
-
-    // 2️⃣ Ждем данные из API (пример, можно добавить свои)
-    const apiPromises = [
-      fetch("/api/data") // пример API запроса
-        .then((res) => res.json())
-        .catch(() => null),
-      // Можно добавить больше промисов, если нужно
-    ];
-
-    // 3️⃣ Объединяем все промисы
-    Promise.all([...imagePromises, ...apiPromises]).then(() => setIsLoading(false));
-  }, []);
-
-  if (isLoading) return <Preloader />; // показываем прелоадер до полной загрузки
 
   return (
     <main>
@@ -57,29 +29,16 @@ function App() {
           <FourSection />
         </section>
 
-        <section>
-          <Traditional />
+        <section className="h-screen">
+
+        </section>
+        <section className="h-screen">
+
+        </section>
+        <section className="h-screen">
+
         </section>
 
-        <section>
-          <Offers />
-        </section>
-
-        <section>
-          <Cases />
-        </section>
-
-        <section>
-          <Benefits />
-        </section>
-
-        <section>
-          <About />
-        </section>
-
-        <section>
-          <NineSection />
-        </section>
       </Suspense>
     </main>
   );
