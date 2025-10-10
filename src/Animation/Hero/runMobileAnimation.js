@@ -20,10 +20,11 @@ export const runMobileAnimation = (refs) => {
                 trigger: ballRef.current,
                 start: "50% 20%",
                 endTrigger: mainRef.current,
-                end: "bottom+=200 top",
+                end: "bottom 15%",
                 scrub: 1,
                 pin: true,
                 immediateRender: false,
+
 
 
             },
