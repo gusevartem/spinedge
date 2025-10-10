@@ -26,7 +26,6 @@ export const runMobileAnimation = (refs) => {
                 immediateRender: false,
 
 
-
             },
 
         }
