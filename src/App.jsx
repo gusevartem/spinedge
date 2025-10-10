@@ -29,16 +29,29 @@ function App() {
           <FourSection />
         </section>
 
-        <section className="h-screen">
-
-        </section>
-        <section className="h-screen">
-
-        </section>
-        <section className="h-screen">
-
+        <section>
+          <Traditional />
         </section>
 
+        <section>
+          <Offers />
+        </section>
+
+        <section>
+          <Cases />
+        </section>
+
+        <section>
+          <Benefits />
+        </section>
+
+        <section>
+          <About />
+        </section>
+
+        <section>
+          <NineSection />
+        </section>
       </Suspense>
     </main>
   );
