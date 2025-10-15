@@ -35,7 +35,6 @@ const TagCloud = ({ customStyle }) => {
                             trigger: containerRef.current,
                             start: "20% 50%",
                             toggleActions: "play none none none",
-                            markers: true,
                         },
                     }
                 );
