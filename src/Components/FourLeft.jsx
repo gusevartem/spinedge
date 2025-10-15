@@ -34,7 +34,7 @@ const FourLeft = () => {
                     <>
                         <div className='relative h-full block'>
                             <AnimatedImg customStyle={`!w-[250px] !h-[250px] !top-20 !left-[75%]`} />
-                            {/* FourCard — точно привязаны к точкам картинки */}
+
 
                             <FourCard
 
