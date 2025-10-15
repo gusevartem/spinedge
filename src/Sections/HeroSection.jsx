@@ -65,22 +65,12 @@ const HeroSection = () => {
     useGSAP(() => {
         if (isMobile) {
             const refs = { overlayRef, ballRef, mainRef };
-            const mm = runMobileAnimation(refs);
-
-            // Очистка при размонтировании
-            return () => {
-                mm && mm.revert();
-            };
+            return runMobileAnimation(refs);
         } else {
             const refs = { overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef };
-            const mm = runDesktopAnimation(refs, getVisible);
-
-            // Очистка при размонтировании
-            return () => {
-                mm && mm.revert();
-            };
+            return runDesktopAnimation(refs, getVisible);
         }
-    }, [isMobile, runMobileAnimation, runDesktopAnimation]);
+    }, [isMobile]);
     //Тест фпса
     useEffect(() => {
         let lastTime = performance.now();

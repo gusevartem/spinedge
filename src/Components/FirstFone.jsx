@@ -6,7 +6,7 @@ const FirstFone = React.forwardRef(({ children, id }, ref) => {
         <section
             ref={ref}
             id={id}
-            className="bg-black w-screen p-[0_0_50px_0] relative FirstFoneBlock overflow-hidden overflow-x-hidden"
+            className="bg-black w-screen p-[0_0_50px_0] relative FirstFoneBlock overflow-hidden overflow-x-hidden h-dvh"
         >
             {/* Background images */}
             <img

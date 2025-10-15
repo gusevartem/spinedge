@@ -6,13 +6,10 @@ import Head from './Head'
 import './styles.css'
 
 const FourSection = () => {
-    const topSectionRef = useRef(null);  // Ссылка на контейнер до FiveSection
+    const topSectionRef = useRef(null);
     const [blurHeight, setBlurHeight] = useState();
     useEffect(() => {
         if (topSectionRef.current) {
-            const height = topSectionRef.current.offsetHeight;
-            const rect = topSectionRef.current.getBoundingClientRect();
-            const absoluteTop = rect.top + window.scrollY;
             setBlurHeight(topSectionRef.current.offsetHeight)
         }
     }, []);

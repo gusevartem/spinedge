@@ -8,7 +8,7 @@ import AnimatedImg from '../Sections/FourSection/AnimatedImg'
 import AnimatedCircle from './AnimatedCircle'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FourImage from './FourImage'
-gsap.registerPlugin(ScrollTrigger);
+import { runLeftAnimation } from '../Animation/FourSection/runLeftAnimation'
 
 const FourLeft = () => {
     const circleRef = useRef(null);
@@ -17,77 +17,14 @@ const FourLeft = () => {
     const containerRef = useRef(null);
     const lightRef = useRef(null);
     useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.create({
-            trigger: circleRef.current,
-            start: 'center center',     // когда circle входит в зону видимости
-            end: 'center center',
-            onLeave: () => {
-                gsap.to(lightRef.current, {
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: 'power2.out',
-                });
-            },
-            onEnterBack: () => {
-                gsap.to(lightRef.current, {
-                    opacity: 1,
-                    duration: 0.5,
-                    ease: 'power2.out',
-                });
-            },
-        });
-        // Пример липкой анимации, если circle движется вместе с блоком
-        gsap.to(circleRef.current, {
-            y: () => {
-                const height = containerRef.current.offsetHeight;
-                return height - 180; // настраиваемое смещение
-            },
-            ease: 'none',
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: '20% center',
-                end: '85% center',
-                scrub: 1.5, // увеличиваем плавность
-
-            },
-        });
-        gsap.fromTo(firstLeft.current, {
-            x: -350,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1.5,
-            ease: 'power2.inOut',
-        })
-
-        gsap.fromTo(firstLeft.current, {
-            x: -350,
-            opacity: 0
-        }, {
-            x: 0,
-            opacity: 1,
-            duration: 1.5,
-            ease: 'power2.inOut'
-        });
-
-        leftCard.current.forEach((card, index) => {
-            gsap.fromTo(card, {
-                x: -100,
-                opacity: 0
-            }, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top center",
-
-                },
-                x: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out'
-            });
-        });
+        const refs = {
+            circleRef,
+            lightRef,
+            containerRef,
+            firstLeft,
+            leftCard
+        };
+        runLeftAnimation(refs);
 
     }, [])
     return (

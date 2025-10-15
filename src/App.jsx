@@ -1,4 +1,4 @@
-import { Suspense, useState, useEffect } from "react";
+import { Suspense } from "react";
 import Preloader from "./Components/Preloader";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
@@ -16,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({ anticipatePin: 1 });
 
 function App() {
+
 
   return (
     <main>
