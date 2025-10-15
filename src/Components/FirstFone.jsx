@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './styles.module.scss';
 
 const FirstFone = React.forwardRef(({ children, id }, ref) => {
+    useEffect(() => {
+        const updateHeight = () => {
+            document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+        };
+        updateHeight();
+        window.addEventListener('resize', updateHeight);
+        return () => window.removeEventListener('resize', updateHeight);
+    }, []);
     return (
         <section
             ref={ref}
             id={id}
-            className="bg-black w-screen p-[0_0_50px_0] relative FirstFoneBlock overflow-hidden overflow-x-hidden h-dvh"
+            className="bg-black w-screen p-[0_0_50px_0] relative FirstFoneBlock overflow-hidden overflow-x-hidden h-[var(--app-height)]"
         >
             {/* Background images */}
             <img
