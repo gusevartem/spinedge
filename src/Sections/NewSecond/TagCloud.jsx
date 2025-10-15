@@ -10,54 +10,65 @@ const TagCloud = ({ customStyle }) => {
     const containerRef = useRef(null);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.fromTo(
-                blurRef.current,
-                {
-                    opacity: 0,
-                    y: 50,
-                    filter: "blur(10px)",
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    filter: "blur(3.27px)",
-                    duration: 0.8,
-                    ease: "power3.out",
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 10%", // РєРѕРіРґР° РІРµСЂС… РєРѕРЅС‚РµР№РЅРµСЂР° РґРѕС…РѕРґРёС‚ РґРѕ 80% РѕС‚ РІСЊСЋРїРѕСЂС‚Р°
-                        toggleActions: "play none none none",
+        if (!containerRef.current || !blurRef.current || !normalRef.current) return;
 
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+            const ctx = gsap.context(() => {
+                // Анимация размытого элемента
+                gsap.fromTo(
+                    blurRef.current,
+                    {
+                        opacity: 0,
+                        y: 50,
+                        filter: "blur(10px)",
                     },
-                }
-            );
+                    {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(3.27px)",
+                        duration: 0.8,
+                        ease: "power3.out",
+                        stagger: 0.1,
+                        scrollTrigger: {
+                            trigger: containerRef.current,
+                            start: "20% 50%",
+                            toggleActions: "play none none none",
+                            markers: true,
+                        },
+                    }
+                );
 
-            gsap.fromTo(
-                normalRef.current,
-                {
-                    opacity: 0,
-                    y: 50,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    delay: 0.2,
-                    ease: "power3.out",
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: "top 10%",
-                        toggleActions: "play none none none",
+                // Анимация нормального элемента
+                gsap.fromTo(
+                    normalRef.current,
+                    {
+                        opacity: 0,
+                        y: 50,
                     },
-                }
-            );
-        }, containerRef); // РѕРіСЂР°РЅРёС‡РёРІР°РµРј РѕР±Р»Р°СЃС‚СЊ РґРµР№СЃС‚РІРёСЏ GSAP РІРЅСѓС‚СЂРё containerRef
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        delay: 0.2,
+                        ease: "power3.out",
+                        stagger: 0.1,
+                        scrollTrigger: {
+                            trigger: containerRef.current,
+                            start: "10% 50%",
+                            toggleActions: "play none none none",
+                        },
+                    }
+                );
+            });
 
-        return () => ctx.revert(); // РѕС‡РёСЃС‚РєР° РїСЂРё СЂР°Р·РјРѕРЅС‚РёСЂРѕРІР°РЅРёРё
+            return () => ctx.revert(); // очистка контекста при размонтировании
+        });
+
+        return () => mm.revert(); // очистка matchMedia
     }, []);
+
     return (
         <div ref={containerRef} className={`${customStyle || " "} h-[563px] relative !gradient-text-green !mono !text-[16px] !font-medium`}>
             <div

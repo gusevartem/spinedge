@@ -54,7 +54,17 @@ function App() {
           <Cases />
         </section>
 
+        <section>
+          <Benefits />
+        </section>
 
+        <section>
+          <About />
+        </section>
+
+        <section>
+          <NineSection />
+        </section>
       </Suspense>
     </main>
   );

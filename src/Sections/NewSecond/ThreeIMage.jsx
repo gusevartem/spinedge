@@ -1,75 +1,54 @@
-import React, { useEffect, useRef } from 'react'
-import AnimatedCircle from '../../Components/AnimatedCircle'
-import TagCloud from './TagCloud'
-import MobileTag from './MobileTag'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useEffect, useRef } from 'react';
+import AnimatedCircle from '../../Components/AnimatedCircle';
+import TagCloud from './TagCloud';
+import MobileTag from './MobileTag';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const ThreeIMage = () => {
-    const circleRef = useRef(null)
-    const lightRef = useRef(null)
-    const containerRef = useRef(null)
+    const circleRef = useRef(null);
+    const lightRef = useRef(null);
+    const containerRef = useRef(null);
 
     useEffect(() => {
-        let tl = null
 
-        const initAnimation = () => {
-            if (!circleRef.current || !lightRef.current) return
+        const mm = gsap.matchMedia();
 
-            tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top bottom', // запуск, когда верх контейнера касается низа окна
-                    toggleActions: 'play none none reverse',
-                    once: false,
-                },
-            })
+        mm.add("(min-width: 768px)", () => {
+            const ctx = gsap.context(() => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: 'top center',
+                        toggleActions: 'play none none none',
+                        once: true,
+                    },
+                });
 
-            // Анимация круга
-            tl.fromTo(
-                circleRef.current,
-                {
-                    autoAlpha: 0,
-                    scale: 0.8,
-                },
-                {
-                    autoAlpha: 1,
-                    scale: 1,
-                    duration: 1,
-                    ease: 'power2.out',
-                }
-            )
-
-            // Анимация света
-            if (lightRef.current) {
+                // Анимация круга
                 tl.fromTo(
+                    circleRef.current,
+                    { autoAlpha: 0, scale: 0.8 },
+                    { autoAlpha: 1, scale: 1, duration: 1, ease: 'power2.out' }
+                );
+
+                // Анимация света
+                tl.to(
                     lightRef.current,
-                    {
-                        autoAlpha: 0,
-                        scale: 0.8,
-                    },
-                    {
-                        autoAlpha: 1,
-                        scale: 1,
-                        duration: 1,
-                        ease: 'power2.out',
-                    },
+                    { autoAlpha: 1, scale: 1, duration: 1, ease: 'power2.out' },
                     '+=0.2'
-                )
-            }
-        }
+                );
 
-        initAnimation()
+                return () => tl.kill();
+            });
 
-        return () => {
-            if (tl) {
-                tl.kill()
-                ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-            }
-        }
-    }, [])
+            return () => ctx.revert();
+        });
+
+        return () => mm.revert();
+    }, []);
 
     return (
         <div
@@ -80,7 +59,7 @@ const ThreeIMage = () => {
                 ref={lightRef}
                 src="/NewSecond/blur.png"
                 alt="Blur Effect"
-                className="block lg:hidden WordsBlur absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                className="opacity-100 lg:opacity-0 WordsBlur absolute top-1/2 left-1/2 md:-translate-y-1/2 md:-translate-x-1/2 pointer-events-none"
             />
             <TagCloud customStyle={`hidden md:block`} />
             <MobileTag customStyle={`block md:hidden`} />
@@ -92,7 +71,7 @@ const ThreeIMage = () => {
                 height={window.innerWidth < 640 ? 110 : 200}
             />
         </div>
-    )
-}
+    );
+};
 
-export default ThreeIMage
+export default ThreeIMage;

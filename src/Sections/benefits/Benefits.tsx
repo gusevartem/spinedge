@@ -20,68 +20,10 @@ const items = [
     },
 ];
 
-gsap.registerPlugin(ScrollTrigger);
 
 interface BenefitsProps { }
-
 export const Benefits: FC<BenefitsProps> = () => {
-    const word = ["S", "P", "I", "N", "E", "D", "G", "E"];
-    const headRef = useRef<HTMLParagraphElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const wordRef = useRef<HTMLDivElement>(null);
-    const lightRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (!containerRef.current || !wordRef.current || !lightRef.current || !headRef.current) return;
-        const mm = gsap.matchMedia();
-        mm.add("(min-width: 768px)", () => {
-
-            const ctx = gsap.context(() => {
-                gsap.fromTo(
-                    headRef.current,
-                    { opacity: 0, y: 50 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1,
-                        ease: 'power2.out',
-                        stagger: 0.1,
-                        scrollTrigger: {
-                            trigger: containerRef.current,
-                            start: 'top 80%',
-                            toggleActions: 'play none none none',
-                        },
-                    }
-                );
-
-                // Анимация букв
-                const letters = wordRef.current.querySelectorAll('p');
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: wordRef.current,
-                        start: 'top 80%',
-                        end: 'bottom bottom',
-                        toggleActions: 'play none none none',
-                    },
-                });
-
-                tl.fromTo(
-                    letters,
-                    { opacity: 0, y: 50 },
-                    { opacity: 1, y: 0, stagger: 0.1, duration: 1, ease: 'power2.out' }
-                ).fromTo(
-                    lightRef.current,
-                    { opacity: 0, y: 20 },
-                    { opacity: 0.7, y: 0, duration: 1, ease: 'power2.out' },
-                    '+=0.1'
-                );
-            });
-            // Очистка анимаций при размонтировании
-            return () => ctx.revert();
-        })
-
-
-    }, []);
 
     return (
         <div className='BenefitsSec' id="why">
@@ -119,17 +61,17 @@ export const Benefits: FC<BenefitsProps> = () => {
                     ))}
                 </div>
 
-                <div ref={containerRef} className='w-full relative flex justify-center items-center pt-[1%] flex-col gap-[85px] lg:mb-50 mb-26'>
-                    <p ref={headRef} className='sm:text-[37px] text-[23px] text-center leading-[120%] font-bold gradient-text-green'>
+                <div className='w-full relative flex justify-center items-center pt-[1%] flex-col gap-[85px] lg:mb-50 mb-26'>
+                    <p className='sm:text-[37px] text-[23px] text-center leading-[120%] font-bold gradient-text-green'>
                         — and these are just three<br /> sectors out of hundreds…
                     </p>
-                    <ThreeIMage ref={wordRef} />
+                    <ThreeIMage />
                 </div>
 
                 <div className="absolute opacity-70 bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-black z-10 pointer-events-none" />
 
                 <div
-                    ref={lightRef}
+
                     className="absolute w-screen h-[30px] bottom-0 left-1/2 -translate-x-1/2 blur-[80px] rounded-full bg-[#16CDDE] opacity-100 pointer-events-none z-20"
                     style={{ willChange: 'transform, opacity' }}
                 />
