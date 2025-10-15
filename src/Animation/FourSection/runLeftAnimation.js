@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export const runLeftAnimation = (refs) => {
     const { circleRef, lightRef, containerRef, firstLeft, leftCard } = refs;
     const ctx = gsap.context(() => {
+        const mm = gsap.matchMedia();
         ScrollTrigger.create({
             trigger: circleRef.current,
             start: 'center center',
@@ -49,23 +50,25 @@ export const runLeftAnimation = (refs) => {
             duration: 1.5,
             ease: 'power2.inOut',
         });
-
-        leftCard.current.forEach((card, index) => {
-            gsap.fromTo(card, {
-                x: -100,
-                opacity: 0
-            }, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top center",
-                },
-                x: 0,
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
-                delay: index * 0.1
+        mm.add("(min-width: 768px)", () => {
+            leftCard.current.forEach((card, index) => {
+                gsap.fromTo(card, {
+                    x: -100,
+                    opacity: 0
+                }, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top center",
+                    },
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power2.out',
+                    delay: index * 0.1
+                });
             });
-        });
+        })
+
 
     });
 

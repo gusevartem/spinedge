@@ -1,83 +1,85 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+// Head.jsx
+import React, { useEffect, useRef, useState } from 'react'
 import s from './styles.module.scss'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const Head = () => {
     const containerRef = useRef(null)
-    const elementsRef = useRef([])
+    const [isVisible, setIsVisible] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
 
-    useLayoutEffect(() => {
-        if (!containerRef.current) return
+    useEffect(() => {
+        // Проверяем мобильное устройство
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 1000)
+        }
 
-        // 🔥 Предварительная настройка для производительности
-        gsap.set(elementsRef.current, {
-            willChange: 'transform, opacity',
-            opacity: 0,
-            y: 50
-        })
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
 
-        const rafId = requestAnimationFrame(() => {
-            gsap.fromTo(
-                elementsRef.current,
-                {
-                    opacity: 0,
-                    y: 50
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: 'power2.out',
-                    stagger: 0.1,
-                    force3D: true,
-                    scrollTrigger: {
-                        trigger: containerRef.current,
-                        start: 'top 75%',
-                        end: 'bottom 20%',
-                        toggleActions: 'play none none none',
-                        markers: false,
-                        anticipatePin: 1,
-                        onEnter: () => {
-
-                            ScrollTrigger.refresh()
-                        }
-                    },
+        // Intersection Observer для отслеживания появления в viewport
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !isVisible) {
+                    setIsVisible(true)
                 }
-            )
-        })
+            },
+            {
+                threshold: 0.25,
+                rootMargin: '0px 0px -25% 0px'
+            }
+        )
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current)
+        }
 
         return () => {
-            cancelAnimationFrame(rafId)
-            ScrollTrigger.getAll().forEach(trigger => {
-                if (trigger.trigger === containerRef.current) {
-                    trigger.kill()
-                }
-            })
+            observer.disconnect()
+            window.removeEventListener('resize', checkMobile)
         }
-    }, [])
+    }, [isVisible])
+
+    const renderText = () => {
+        if (isMobile) {
+            return (
+                <>
+                    SpinEdge embeds AI model weights directly into a dense array of spintronic
+                    memory cells – a crossbar architecture. Inputs are applied as voltages, and
+                    outputs are collected as currents — performing matrix multiplication{' '}
+                    <span>in real time via Ohm's law (I = V × G),</span> avoiding the heavy
+                    computational overhead of digital arithmetic.
+                </>
+            )
+        }
+        return (
+            <>
+                SpinEdge embeds AI model weights directly into a dense array of <br />
+                spintronic memory cells – a crossbar architecture. Inputs are applied <br />
+                as voltages, and outputs are collected as currents — performing <br />
+                matrix multiplication <span>in real time via Ohm's law (I = V × G), <br /></span>
+                avoiding the heavy computational overhead of digital arithmetic.
+            </>
+        )
+    }
 
     return (
-        <div ref={containerRef}>
+        <div ref={containerRef} className={s.headContainer}>
             <p
-                ref={(el) => (elementsRef.current[0] = el)}
-                className="mono text-[10px] sm:text-sm pb-3 bg-[radial-gradient(91.74%_158.57%_at_left_center,#AAAAAA_0%,#00DA90_50%,rgba(225,255,222,0.7)_100%)] bg-clip-text text-transparent md:pb-6"
+                className={`${s.headElement} ${isVisible ? s.animated : ''} ${s.mono} ${s.gradientText}`}
             >
                 SPINEDGE TECHNOLOGY
             </p>
-            <div className="flex flex-col gap-2">
+            <div className={`${s.textContent} `}>
                 <h2
-                    ref={(el) => (elementsRef.current[1] = el)}
-                    className="sm:text-[37px] text-[22px] font-bold gradient-text-green lg:text-nowrap leading-[120%] lg:w-auto w-[320px]"
+                    className={`${s.headElement} ${isVisible ? s.animated : ''} ${s.responsiveText} sm:text-[37px] text-[22px] font-bold gradient-text-green lg:text-nowrap leading-[120%] lg:w-auto w-[320px]`}
                 >
                     Neural network model is stored <br />
                     in memory, and input data is processed <br />
                     through it in analog domain.
                 </h2>
-                <p className={`${s.HeadText3} mono`} >SpinEdge embeds AI model weights directly into a dense array of {window.innerWidth > 1000 && <br />} spintronic memory cells – a crossbar architecture. Inputs are applied {window.innerWidth > 1000 && <br />} as voltages, and outputs are collected as currents — performing {window.innerWidth > 1000 && <br />} matrix multiplication <span>in real time via Ohm’s law (I = V × G), {window.innerWidth > 1000 && <br />} </span> avoiding the heavy computational overhead of digital arithmetic.                 </p>
+                <p className={`${s.headElement} ${isVisible ? s.animated : ''} ${s.HeadText3} mono gradient-text-green font-bold`}>
+                    {renderText()}
+                </p>
             </div>
         </div>
     )

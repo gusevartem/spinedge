@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 
 const Code = ({ ref: innerRef, customStyle }) => {
     const codeRef = useRef(null);
+    const animationRef = useRef(null);
 
     const codeText = `static bool init(CURL conn, char *url)
 {
@@ -31,9 +32,15 @@ const Code = ({ ref: innerRef, customStyle }) => {
 }`;
 
     useEffect(() => {
+        // Запускаем анимацию сразу, но только на больших экранах
+        if (window.innerWidth < 1024) return;
+
         const obj = { length: 0 };
 
-        const tl = gsap.timeline({ repeat: -0.3, repeatDelay: 0.3 });
+        const tl = gsap.timeline({
+            repeat: -1,
+            repeatDelay: 0.3
+        });
 
         tl.to(obj, {
             duration: 3,
@@ -53,6 +60,14 @@ const Code = ({ ref: innerRef, customStyle }) => {
                 }
             },
         });
+
+        animationRef.current = tl;
+
+        return () => {
+            if (animationRef.current) {
+                animationRef.current.kill();
+            }
+        };
     }, []);
 
     return (

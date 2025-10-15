@@ -1,6 +1,10 @@
+// styles.module.scss
+
 .HeadText3 {
     // max-width: 600px;
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -13,6 +17,108 @@
     }
 }
 
+
+@media screen and (max-width: 1000px) {
+    .HeadText3 {
+        font-size: 12px;
+        margin-top: 7px;
+    }
+}
+
+// Стили для анимации
+.headContainer {
+    /* Контейнер для отслеживания */
+}
+
+.headElement {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: transform, opacity;
+}
+
+.headElement.animated {
+    animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+// Задержки для каждого элемента
+.headElement:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.headElement:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.headElement:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Стили для текста
+.mono {
+    font-family: 'Monospace', monospace;
+}
+
+.gradientText {
+    background: radial-gradient(91.74% 158.57% at left center, #AAAAAA 0%, #00DA90 50%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 10px;
+    padding-bottom: 12px;
+}
+
+.gradientTextGreen {
+    background: linear-gradient(135deg, #00DA90 0%, #AAAAAA 50%, rgba(225, 255, 222, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+// Адаптивные стили
+@media (min-width: 641px) {
+    .gradientText {
+        font-size: 14px;
+        padding-bottom: 24px;
+    }
+
+    .responsiveText {
+        font-size: 37px;
+    }
+}
+
+@media (max-width: 640px) {
+    .responsiveText {
+        font-size: 22px;
+        width: 320px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .responsiveText {
+        white-space: nowrap;
+        width: auto;
+    }
+}
 
 @media screen and (max-width: 1000px) {
     .HeadText3 {
