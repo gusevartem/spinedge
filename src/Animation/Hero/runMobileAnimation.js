@@ -35,7 +35,6 @@ export const runMobileAnimation = (refs) => {
                     pinSpacing: false,
                     anticipatePin: 1,
                     immediateRender: false,
-                    markers: true
 
                 },
             }

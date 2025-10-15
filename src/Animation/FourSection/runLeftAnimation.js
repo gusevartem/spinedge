@@ -34,7 +34,6 @@ export const runLeftAnimation = (refs) => {
                 start: '20% center',
                 end: '85% center',
                 scrub: 1.5,
-                markers: true,
             },
         });
 

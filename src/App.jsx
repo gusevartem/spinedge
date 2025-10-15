@@ -46,6 +46,14 @@ function App() {
           <Traditional />
         </section>
 
+        <section>
+          <Offers />
+        </section>
+
+        <section>
+          <Cases />
+        </section>
+
 
       </Suspense>
     </main>
