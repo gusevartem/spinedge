@@ -1,8 +1,5 @@
-import React, { useEffect, useRef } from 'react';
 import { type FC } from 'react';
 import ThreeIMage from '../NewSecond/ThreeIMage';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './benefits.css';
 
 const items = [

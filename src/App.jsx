@@ -34,21 +34,7 @@ function App() {
   return (
     <main>
       <Suspense fallback={<Preloader />}>
-        <section>
-          <HeroSection />
-        </section>
 
-        <section>
-          <FourSection />
-        </section>
-
-        <section>
-          <Traditional />
-        </section>
-
-        <section>
-          <Offers />
-        </section>
 
         <section>
           <Cases />
@@ -58,13 +44,6 @@ function App() {
           <Benefits />
         </section>
 
-        <section>
-          <About />
-        </section>
-
-        <section>
-          <NineSection />
-        </section>
       </Suspense>
     </main>
   );

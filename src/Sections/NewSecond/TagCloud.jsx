@@ -1,8 +1,5 @@
-﻿import React, { useRef, useEffect } from "react";
+﻿import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const TagCloud = ({ customStyle }) => {
     const blurRef = useRef([]);
@@ -10,27 +7,25 @@ const TagCloud = ({ customStyle }) => {
     const containerRef = useRef(null);
 
     useEffect(() => {
-        if (!containerRef.current || !blurRef.current || !normalRef.current) return;
+        if (!containerRef.current) return;
 
         const mm = gsap.matchMedia();
 
         mm.add("(min-width: 768px)", () => {
             const ctx = gsap.context(() => {
-                // Анимация размытого элемента
                 gsap.fromTo(
                     blurRef.current,
                     {
                         opacity: 0,
                         y: 50,
-                        filter: "blur(10px)",
                     },
                     {
-                        opacity: 1,
+                        opacity: 0.6,
                         y: 0,
-                        filter: "blur(3.27px)",
-                        duration: 0.8,
-                        ease: "power3.out",
+                        duration: 0.6,
+                        ease: "power1.out",
                         stagger: 0.1,
+                        willChange: "transform, opacity",
                         scrollTrigger: {
                             trigger: containerRef.current,
                             start: "20% 50%",
@@ -39,7 +34,6 @@ const TagCloud = ({ customStyle }) => {
                     }
                 );
 
-                // Анимация нормального элемента
                 gsap.fromTo(
                     normalRef.current,
                     {
@@ -50,9 +44,10 @@ const TagCloud = ({ customStyle }) => {
                         opacity: 1,
                         y: 0,
                         duration: 0.6,
-                        delay: 0.2,
-                        ease: "power3.out",
-                        stagger: 0.1,
+                        delay: 0.1,
+                        ease: "power1.out",
+                        stagger: 0.15,
+                        willChange: "transform, opacity",
                         scrollTrigger: {
                             trigger: containerRef.current,
                             start: "10% 50%",
@@ -62,10 +57,10 @@ const TagCloud = ({ customStyle }) => {
                 );
             });
 
-            return () => ctx.revert(); // очистка контекста при размонтировании
+            return () => ctx.revert();
         });
 
-        return () => mm.revert(); // очистка matchMedia
+        return () => mm.revert();
     }, []);
 
     return (
