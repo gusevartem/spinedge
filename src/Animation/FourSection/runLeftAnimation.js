@@ -31,12 +31,13 @@ export const runLeftAnimation = (refs) => {
                 const height = containerRef.current.offsetHeight;
                 return height - 180;
             },
-            ease: 'none',
+            force3D: false,
             scrollTrigger: {
                 trigger: containerRef.current,
                 start: '20% center',
                 end: '85% center',
-                scrub: 1.5,
+                scrub: 1,
+                markers: true
             },
         });
 

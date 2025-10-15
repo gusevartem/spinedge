@@ -24,21 +24,30 @@ export const runMobileAnimation = (refs) => {
             {
                 scale: 0.7,
                 ease: "power2.out",
-                force3D: true,
                 scrollTrigger: {
                     trigger: ballRef.current,
-                    start: "50% 20%",
+                    start: "30% 20%",
                     endTrigger: mainRef.current,
                     end: "bottom 17%",
                     scrub: 1,
-                    pin: true,
-                    pinSpacing: false,
-                    anticipatePin: 1,
-                    immediateRender: false,
-
-                },
+                    pin: false, // Уберите пин отсюда
+                    anticipatePin: 0,
+                    immediateRender: false
+                }
             }
         );
+
+        // Отдельный пин для родительского контейнера
+        gsap.to(ballRef.current.parentElement, {
+            scrollTrigger: {
+                trigger: ballRef.current,
+                start: "30% 20%",
+                endTrigger: mainRef.current,
+                end: "bottom 17%",
+                pin: true,
+                pinSpacing: false
+            }
+        });
 
     });
 
