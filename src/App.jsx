@@ -21,16 +21,6 @@ gsap.config({
 
 
 function App() {
-  useEffect(() => {
-    const data = ScrollTrigger.getAll().map((trigger, i) => ({
-      "№": i + 1,
-      "Элемент": trigger.trigger?.className || trigger.trigger?.id || trigger.trigger?.tagName,
-      "Start": trigger.start,
-      "End": trigger.end,
-      "Есть_анимация": !!trigger.animation,
-    }));
-    console.table(data);
-  }, []);
   return (
     <main id="body">
       <Suspense fallback={<Preloader />}>
