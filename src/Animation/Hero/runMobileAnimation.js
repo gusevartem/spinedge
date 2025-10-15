@@ -29,12 +29,13 @@ export const runMobileAnimation = (refs) => {
                     trigger: ballRef.current,
                     start: "50% 20%",
                     endTrigger: mainRef.current,
-                    end: "bottom 15%",
+                    end: "bottom 17%",
                     scrub: 1,
                     pin: true,
                     pinSpacing: false,
                     anticipatePin: 1,
                     immediateRender: false,
+
                 },
             }
         );

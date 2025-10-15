@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -10,25 +10,54 @@ const Head = () => {
     const containerRef = useRef(null)
     const elementsRef = useRef([])
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!containerRef.current) return
 
-        gsap.fromTo(
-            elementsRef.current,
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                ease: 'power2.out',
-                stagger: 0.1,
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
+        // 🔥 Предварительная настройка для производительности
+        gsap.set(elementsRef.current, {
+            willChange: 'transform, opacity',
+            opacity: 0,
+            y: 50
+        })
+
+        const rafId = requestAnimationFrame(() => {
+            gsap.fromTo(
+                elementsRef.current,
+                {
+                    opacity: 0,
+                    y: 50
                 },
-            }
-        )
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: 'power2.out',
+                    stagger: 0.1,
+                    force3D: true,
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: 'top 75%',
+                        end: 'bottom 20%',
+                        toggleActions: 'play none none none',
+                        markers: false,
+                        anticipatePin: 1,
+                        onEnter: () => {
+
+                            ScrollTrigger.refresh()
+                        }
+                    },
+                }
+            )
+        })
+
+        return () => {
+            cancelAnimationFrame(rafId)
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (trigger.trigger === containerRef.current) {
+                    trigger.kill()
+                }
+            })
+        }
     }, [])
 
     return (
@@ -42,7 +71,7 @@ const Head = () => {
             <div className="flex flex-col gap-2">
                 <h2
                     ref={(el) => (elementsRef.current[1] = el)}
-                    className="sm:text-[37px] text-[22px] font-bold gradient-text-green lg:text-nowrap leading-[120%] w-full lg:w-auto w-[320px]"
+                    className="sm:text-[37px] text-[22px] font-bold gradient-text-green lg:text-nowrap leading-[120%] lg:w-auto w-[320px]"
                 >
                     Neural network model is stored <br />
                     in memory, and input data is processed <br />
