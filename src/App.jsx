@@ -18,20 +18,18 @@ gsap.config({
   force3D: false,
 });
 
+
+
 function App() {
   useEffect(() => {
-    const triggers = ScrollTrigger.getAll();
-    console.log(`Всего ScrollTrigger'ов: ${triggers.length}`);
-
-    triggers.forEach((trigger, i) => {
-      console.log(`--- Trigger ${i + 1} ---`);
-      console.log("ID:", trigger.id || "(без id)");
-      console.log("Trigger элемент:", trigger.trigger);
-      console.log("Start:", trigger.start);
-      console.log("End:", trigger.end);
-      console.log("Animation:", trigger.animation);
-      console.log("----------------------");
-    });
+    const data = ScrollTrigger.getAll().map((trigger, i) => ({
+      "№": i + 1,
+      "Элемент": trigger.trigger?.className || trigger.trigger?.id || trigger.trigger?.tagName,
+      "Start": trigger.start,
+      "End": trigger.end,
+      "Есть_анимация": !!trigger.animation,
+    }));
+    console.table(data);
   }, []);
   return (
     <main>
@@ -44,9 +42,10 @@ function App() {
           <FourSection />
         </section>
 
-        <section className="h-dvh">
-
+        <section>
+          <Traditional />
         </section>
+
 
       </Suspense>
     </main>
