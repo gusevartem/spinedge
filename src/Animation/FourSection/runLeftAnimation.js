@@ -33,7 +33,7 @@ export const runLeftAnimation = (refs) => {
                 trigger: container,
                 start: '20% center',
                 end: '85% center',
-                scrub: true,
+                scrub: 2,
 
 
             },
