@@ -33,7 +33,7 @@ export const runLeftAnimation = (refs) => {
                 trigger: container,
                 start: '20% center',
                 end: '85% center',
-                scrub: 0.5,
+                scrub: true,
 
 
             },
@@ -46,7 +46,6 @@ export const runLeftAnimation = (refs) => {
                 scrollTrigger: {
                     trigger: cards[0]?.parentNode,
                     start: 'top center',
-                    scroller: ".content"
                 },
                 defaults: { ease: 'power2.out', duration: 1 },
             });
