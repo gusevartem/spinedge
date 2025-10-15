@@ -5,7 +5,6 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NotFoundPage from './Sections/NotFoundPage.jsx'
 import PrivacyPolicy from './Sections/PrivacyPolicy.jsx'
-import './global.css'
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>

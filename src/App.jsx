@@ -14,7 +14,7 @@ import NineSection from "./Sections/NineSection/NineSection";
 
 
 gsap.registerPlugin(ScrollTrigger);
-
+ScrollTrigger.normalizeScroll(true);
 
 function App() {
   return (
