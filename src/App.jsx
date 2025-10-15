@@ -12,15 +12,30 @@ import { Benefits } from "./Sections/benefits/Benefits";
 import { About } from "./Sections/about/About";
 import NineSection from "./Sections/NineSection/NineSection";
 
+// GSAP настройки для производительности
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.defaults({ anticipatePin: 1 });
+
+// Глобальные настройки GSAP для лучшей производительности
+gsap.config({
+  force3D: true,
+  autoSleep: 60,
+  nullTargetWarn: false
+});
+
+// Настройки ScrollTrigger по умолчанию
+ScrollTrigger.defaults({
+  anticipatePin: 1,
+  markers: false // отключить маркеры в продакшене
+});
+
+// Оптимизация для мобильных устройств (опционально)
+if (typeof window !== 'undefined') {
+  ScrollTrigger.normalizeScroll(true);
+}
 
 function App() {
-
-
   return (
     <main>
-      {/* Suspense для ленивых компонентов */}
       <Suspense fallback={<Preloader />}>
         <section>
           <HeroSection />
