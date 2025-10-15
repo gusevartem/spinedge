@@ -23,7 +23,6 @@ export const runMobileAnimation = (refs) => {
             { scale: 1 },
             {
                 scale: 0.7,
-                ease: "power2.out",
                 force3D: true,
                 scrollTrigger: {
                     trigger: ballRef.current,

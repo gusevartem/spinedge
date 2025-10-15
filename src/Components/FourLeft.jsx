@@ -16,13 +16,14 @@ const FourLeft = () => {
     const leftCard = useRef([])
     const containerRef = useRef(null);
     const lightRef = useRef(null);
+
     useGSAP(() => {
         const refs = {
             circleRef,
             lightRef,
             containerRef,
             firstLeft,
-            leftCard
+            leftCard,
         };
         runLeftAnimation(refs);
 

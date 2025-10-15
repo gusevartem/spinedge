@@ -26,19 +26,24 @@ export const runLeftAnimation = (refs) => {
         const circle = circleRef.current;
         const circleY = container.offsetHeight - 180;
 
-        gsap.to(circle, {
-            y: circleY,
-            force3D: false,
-            scrollTrigger: {
-                trigger: container,
-                start: '20% center',
-                end: '85% center',
-                scrub: 2,
 
+        gsap.to(circle,
+            {
+                force3D: true,
+                scrollTrigger: {
+                    trigger: circle,
+                    endTrigger: containerRef.current,
+                    start: 'bottom center',
+                    end: 'bottom center',
+                    scrub: 1,
+                    pin: true,
+                    pinSpacing: false,
+                    anticipatePin: 1,
+                    immediateRender: false
 
-            },
-        });
-
+                },
+            }
+        );
         // --- Анимации карточек ---
         mm.add('(min-width: 768px)', () => {
             const cards = leftCard.current;
