@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import Preloader from "./Components/Preloader";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
@@ -18,6 +18,8 @@ gsap.config({
   force3D: false,
 });
 
+
+
 function App() {
   return (
     <main>
@@ -30,29 +32,10 @@ function App() {
           <FourSection />
         </section>
 
-        <section>
-          <Traditional />
+        <section className="h-dvh">
+
         </section>
 
-        <section>
-          <Offers />
-        </section>
-
-        <section>
-          <Cases />
-        </section>
-
-        <section>
-          <Benefits />
-        </section>
-
-        <section>
-          <About />
-        </section>
-
-        <section>
-          <NineSection />
-        </section>
       </Suspense>
     </main>
   );

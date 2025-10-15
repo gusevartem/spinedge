@@ -72,7 +72,7 @@ const HeroSection = () => {
         }
     }, [isMobile]);
     //Тест фпса
-    useEffect(() => {
+    /*useEffect(() => {
         let lastTime = performance.now();
         let frames = 0;
 
@@ -88,7 +88,7 @@ const HeroSection = () => {
         };
 
         gsap.ticker.add(logFPS);
-    }, [])
+    }, [])*/
     return (
         <FirstFone ref={mainRef} id='main'>
             <div ref={overlayRef} className="absolute inset-0 bg-black z-[150] pointer-events-none" />
