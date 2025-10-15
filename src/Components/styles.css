@@ -127,7 +127,7 @@ body {
         top: 140px !important;
     }
 
-    .FourImageLine > img {
+    .FourImageLine>img {
         width: 200px;
     }
 
@@ -147,7 +147,7 @@ body {
         /* margin-top: 300px; */
     }
 
-    .FourImageLine > div:last-child {
+    .FourImageLine>div:last-child {
         width: 120px !important;
         height: 120px !important;
         top: 15px;
@@ -199,18 +199,18 @@ body {
         /* margin-top: -150px; */
     }
 
-    
+
 }
 
 @media screen and (max-width: 550px) {
-    .FourImageLine > div:last-child {
+    .FourImageLine>div:last-child {
         width: 100px !important;
         height: 100px !important;
         top: -10px;
         left: 40px;
     }
 
-    .FourImageLine > img {
+    .FourImageLine>img {
         width: 150px;
         height: 150px;
     }
@@ -268,7 +268,7 @@ body {
     }
 }
 
-@media screen and (max-width: 400px)  {
+@media screen and (max-width: 400px) {
     .FourImageLine {
         right: 180px;
     }

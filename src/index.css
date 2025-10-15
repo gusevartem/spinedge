@@ -10,6 +10,11 @@ body {
   width: 100%;
   max-width: 100vw;
   background: var(--color-black);
+  /* Плавный скролл для всех современных браузеров */
+  scroll-behavior: smooth;
+
+  /* Для Safari и iOS: плавная инерционная прокрутка при таче/свайпе */
+  -webkit-overflow-scrolling: touch;
 }
 
 .mono {

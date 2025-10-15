@@ -32,7 +32,7 @@ function App() {
     console.table(data);
   }, []);
   return (
-    <main>
+    <main id="body">
       <Suspense fallback={<Preloader />}>
         <section>
           <HeroSection />
