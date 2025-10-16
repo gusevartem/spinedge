@@ -1,14 +1,14 @@
-import React from 'react'
-import { type FC } from 'react'
+
+import React, { type FC } from 'react'
 import './cases.css'
 import { Case1 } from './components/Case1/Case1'
 import { Case2 } from './components/Case2/Case2'
 import { Case3 } from './components/Case3/Case3'
-import { Benefits } from '../benefits/Benefits'
+
 
 interface CasesProps { }
 
-export const Cases: FC<CasesProps> = () => {
+const Cases: FC<CasesProps> = () => {
 
 
     return (
@@ -28,3 +28,5 @@ export const Cases: FC<CasesProps> = () => {
         </div>
     )
 }
+
+export default React.memo(Cases);

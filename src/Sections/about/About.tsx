@@ -1,5 +1,5 @@
-import React from 'react'
-import { type FC } from 'react'
+
+import React, { type FC } from 'react'
 import './about.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -27,7 +27,7 @@ const list = [
 
 interface AboutProps { }
 
-export const About: FC<AboutProps> = () => {
+const About: FC<AboutProps> = () => {
 
     return (
         <div className='AboutSec' id="about" >
@@ -329,3 +329,4 @@ export const About: FC<AboutProps> = () => {
         </div>
     )
 }
+export default React.memo(About);

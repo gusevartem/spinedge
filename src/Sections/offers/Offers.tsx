@@ -8,7 +8,7 @@ import gsap from 'gsap'
 
 interface OffersProps { }
 
-export const Offers: FC<OffersProps> = () => {
+const Offers: FC<OffersProps> = () => {
     const circleRef = useRef(null);
     const lightRef = useRef(null);
 
@@ -100,3 +100,4 @@ export const Offers: FC<OffersProps> = () => {
         </div>
     )
 }
+export default React.memo(Offers);

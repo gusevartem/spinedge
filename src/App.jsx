@@ -1,16 +1,19 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy } from "react";
 import Preloader from "./Components/Preloader";
-import { ScrollTrigger } from "gsap/all";
-import gsap from "gsap";
 
-import HeroSection from "./Sections/HeroSection";
-import FourSection from "./Sections/FourSection/FourSection";
-import { Traditional } from "./Sections/traditional/Traditional";
-import { Offers } from "./Sections/offers/Offers";
-import { Cases } from "./Sections/cases/Cases";
-import { Benefits } from "./Sections/benefits/Benefits";
-import { About } from "./Sections/about/About";
-import NineSection from "./Sections/NineSection/NineSection";
+// Динамический импорт секций
+const HeroSection = lazy(() => import("./Sections/HeroSection"));
+const FourSection = lazy(() => import("./Sections/FourSection/FourSection"));
+const Traditional = lazy(() => import("./Sections/traditional/Traditional"));
+const Offers = lazy(() => import("./Sections/offers/Offers"));
+const Cases = lazy(() => import("./Sections/cases/Cases"));
+const Benefits = lazy(() => import("./Sections/benefits/Benefits"));
+const About = lazy(() => import("./Sections/about/About"));
+const NineSection = lazy(() => import("./Sections/NineSection/NineSection"));
+
+// Импорт GSAP только нужных модулей
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.config({
@@ -18,7 +21,6 @@ gsap.config({
 });
 
 function App() {
-
   return (
     <main id="body">
       <Suspense fallback={<Preloader />}>

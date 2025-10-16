@@ -1,11 +1,9 @@
 import React from 'react'
 import { type FC } from 'react'
 import './trad.css'
-import FourCard from '../../Components/FourCard'
 
 interface TraditionalProps { }
-
-export const Traditional: FC<TraditionalProps> = () => {
+const Traditional: FC<TraditionalProps> = () => {
 
 
     return (
@@ -50,3 +48,5 @@ export const Traditional: FC<TraditionalProps> = () => {
         </div>
     )
 }
+
+export default React.memo(Traditional);

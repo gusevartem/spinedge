@@ -1,6 +1,6 @@
 import FourFone from '../../Components/FourFone'
 import FourLeft from '../../Components/FourLeft'
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Head from './Head'
 
 import './styles.css'
@@ -27,4 +27,4 @@ const FourSection = () => {
     )
 }
 
-export default FourSection
+export default React.memo(FourSection);

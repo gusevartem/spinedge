@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import React, { type FC } from 'react';
 import ThreeIMage from '../NewSecond/ThreeIMage';
 import './benefits.css';
 
@@ -19,7 +19,7 @@ const items = [
 
 
 interface BenefitsProps { }
-export const Benefits: FC<BenefitsProps> = () => {
+const Benefits: FC<BenefitsProps> = () => {
 
 
     return (
@@ -76,3 +76,4 @@ export const Benefits: FC<BenefitsProps> = () => {
         </div>
     );
 };
+export default React.memo(Benefits);

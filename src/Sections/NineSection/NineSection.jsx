@@ -167,4 +167,4 @@ const NineSection = () => {
   );
 };
 
-export default NineSection;
+export default React.memo(NineSection);

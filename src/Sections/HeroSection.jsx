@@ -1,6 +1,5 @@
 //База
 import React, { useEffect, useRef, useState, useMemo, useCallback, Suspense } from 'react';
-import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 //Компоненты
