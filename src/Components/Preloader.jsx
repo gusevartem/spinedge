@@ -5,7 +5,6 @@ export const Preloader = () => {
     <div style={{
       width: "100%",
       height: "100vh",
-      minHeight: "100svh",
       // modern viewport unit for Safari/iOS and desktop
       minHeight: "100dvh",
       display: "flex",
