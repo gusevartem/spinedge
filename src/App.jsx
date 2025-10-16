@@ -18,38 +18,6 @@ gsap.config({
 });
 
 function App() {
-  useEffect(() => {
-    const images = document.querySelectorAll("img[data-src]");
-
-    if (!images.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      images.forEach(img => {
-        img.src = img.dataset.src;
-      });
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            observer.unobserve(img);
-          }
-        });
-      },
-      {
-        rootMargin: "100px 0px",
-        threshold: 0.01,
-      }
-    );
-
-    images.forEach(img => observer.observe(img));
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <main id="body">
