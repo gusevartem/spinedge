@@ -19,28 +19,28 @@ const FirstFone = React.forwardRef(({ children, id }, ref) => {
             {/* Background images */}
             <img
                 src="/Hero/morp.webp"
-                loading="lazy"
+
                 decoding="async"
                 className="absolute lg:w-full w-[4432.25px] h-screen select-none pointer-events-none -translate-x-1/2 left-1/2 z-20 transform-gpu"
                 alt=""
             />
             <img
                 src="/Hero/blur.webp"
-                loading="lazy"
+
                 decoding="async"
                 className="hidden lg:block absolute w-full select-none pointer-events-none z-0 transform-gpu"
                 alt=""
             />
             <img
                 src="/Hero/dots.webp"
-                loading="lazy"
+
                 decoding="async"
                 className="hidden lg:block absolute -translate-x-1/2 left-1/2 select-none pointer-events-none z-0 transform-gpu"
                 alt=""
             />
             <img
                 src="/Hero/blur.webp"
-                loading="lazy"
+
                 decoding="async"
                 className="block lg:hidden absolute w-full select-none pointer-events-none -translate-x-1/2 left-1/2 min-w-[860px] min-h-[276px] top-[30%] z-0 transform-gpu"
                 alt=""
@@ -52,7 +52,7 @@ const FirstFone = React.forwardRef(({ children, id }, ref) => {
 
             <img
                 src="/Hero/Code.webp"
-                loading="lazy"
+
                 decoding="async"
                 alt="code"
                 className="block lg:hidden sm:left-[8%] absolute top-16 left-0 h-auto max-h-[400px] select-none pointer-events-none z-0 lastLast"

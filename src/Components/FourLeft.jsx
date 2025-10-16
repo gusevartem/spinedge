@@ -1,12 +1,10 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import FourCard from './FourCard'
 import ThreeMiniSect from './ThreeMiniSect'
-import Head from '../Sections/FourSection/Head'
-import { gsap } from 'gsap'
+import lightSrcSet from '/Public/Four/light.webp?w=150;300;450&as=srcset';
 import { useGSAP } from '@gsap/react'
 import AnimatedImg from '../Sections/FourSection/AnimatedImg'
 import AnimatedCircle from './AnimatedCircle'
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FourImage from './FourImage'
 import { runLeftAnimation } from '../Animation/FourSection/runLeftAnimation'
 
@@ -60,7 +58,15 @@ const FourLeft = () => {
                             <FourCard
                                 customPosition={'!absolute block SpintronicMob md:hidden'} text={`Spintronic<br/> Synapse`} />
                             <div className='relative MobLight top-[-150px] left-[10px] '>
-                                <img ref={lightRef} className='absolute MobLightLine left-[80px] w-[150px] -top-[28px]' data-src='/Four/light.webp' />
+                                <img
+                                    ref={lightRef}
+                                    className='absolute MobLightLine left-[80px] w-[150px] -top-[28px]'
+                                    srcSet={lightSrcSet}
+                                    src='/Four/light.webp'
+                                    alt=''
+                                    loading='lazy'
+                                    decoding='async'
+                                />
                                 <AnimatedCircle lottieRef={circleRef} customStyle={`sticky MobLightCircle left-[45px]`} width={`100`} height={`100`} />
                             </div>
                         </div>

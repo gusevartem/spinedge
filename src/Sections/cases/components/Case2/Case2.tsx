@@ -77,8 +77,8 @@ export const Case2: FC<Case2Props> = () => {
             <HeaderText num={2} title='Driving mission-critical decisions — in real time' text='' />
             <div className='CaseBody' >
                 <div className='Case3CenterShadow' ></div>
-                <img loading="lazy" data-src='./Cases/corner.png' className='Case2Corner1' />
-                <img loading="lazy" data-src='./Cases/corner.png' className='Case2Corner2' />
+                <img loading='lazy' src='./Cases/corner.png' className='Case2Corner1' />
+                <img loading='lazy' src='./Cases/corner.png' className='Case2Corner2' />
                 <div className='TextGroup' >
                     <p className={`Case2Text Case2Text1 mono`} >SpinEdge delivers ultra-low-latency AI for autonomous systems — from drones and delivery robots to ADAS-equipped vehicles</p>
                     <ul className='Case2Text2' >
@@ -87,22 +87,22 @@ export const Case2: FC<Case2Props> = () => {
                     </ul>
                 </div>
                 <div className='Case2ImagesGroup' >
-                    <img loading="lazy" data-src='./Case2/drone.webp' className='Drone' />
-                    <img loading="lazy" data-src='./Case2/droneMob.webp' className='DroneMob' />
-                    <img loading="lazy" data-src='./Case2/car1.webp' className='Case2Car1' />
-                    <img loading="lazy" data-src='./Case2/car1Mob.png' className='Case2Car1Mob' />
-                    <img loading="lazy" data-src='./Case2/car2.png' className='Case2Car2' />
-                    <img loading="lazy" data-src='./Case2/car2Mob.png' className='Case2Car2Mob' />
+                    <img loading='lazy' src='./Case2/drone.webp' className='Drone' />
+                    <img loading='lazy' src='./Case2/droneMob.webp' className='DroneMob' />
+                    <img loading='lazy' src='./Case2/car1.webp' className='Case2Car1' />
+                    <img loading='lazy' src='./Case2/car1Mob.png' className='Case2Car1Mob' />
+                    <img loading='lazy' src='./Case2/car2.png' className='Case2Car2' />
+                    <img loading='lazy' src='./Case2/car2Mob.png' className='Case2Car2Mob' />
                     <div className='Case2CenterImgWrap' >
-                        <img loading="lazy" data-src='./Case2/line1.webp' className='Case2Line1' />
-                        <img loading="lazy" data-src='./Case2/line2.webp' className='Case2Line2' />
-                        <img loading="lazy" data-src='./Case2/line3.webp' className='Case2Line3' />
+                        <img loading='lazy' src='./Case2/line1.webp' className='Case2Line1' />
+                        <img loading='lazy' src='./Case2/line2.webp' className='Case2Line2' />
+                        <img loading='lazy' src='./Case2/line3.webp' className='Case2Line3' />
                         <AnimatedCircle id={''} lottieRef={circleRef} customStyle={`Case2Spin`} width={80} height={80} />
-                        <img loading="lazy" data-src='./Case2/lineTopMob.webp' className='Case2Line1Mob' />
-                        <img loading="lazy" data-src='./Case2/lineRightMob.webp' className='Case2Line2Mob' />
-                        <img loading="lazy" data-src='./Case2/lineLeftMob.webp' className='Case2Line3Mob' />
+                        <img loading='lazy' src='./Case2/lineTopMob.webp' className='Case2Line1Mob' />
+                        <img loading='lazy' src='./Case2/lineRightMob.webp' className='Case2Line2Mob' />
+                        <img loading='lazy' src='./Case2/lineLeftMob.webp' className='Case2Line3Mob' />
 
-                        <img loading="lazy" data-src='./Case2/plata.webp' className='Case2Plata' />
+                        <img loading='lazy' src='./Case2/plata.webp' className='Case2Plata' />
                     </div>
                 </div>
                 <ul className='Case2Text2 CaseText2Clone' >

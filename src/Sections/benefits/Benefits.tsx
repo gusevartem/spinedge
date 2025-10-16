@@ -24,17 +24,17 @@ export const Benefits: FC<BenefitsProps> = () => {
 
     return (
         <div className='BenefitsSec' id="why">
-            <img loading='lazy' data-src='./Benefits/car1.webp' className='BenefitsCar1' />
-            <img loading='lazy' data-src='./Case2/car2.png' className='BenefitsCar2' />
+            <img loading='lazy' src='./Benefits/car1.webp' className='BenefitsCar1' />
+            <img loading='lazy' src='./Case2/car2.png' className='BenefitsCar2' />
             <div className='benefitsCenterShadow'></div>
             <img
-                data-src='/right.webp'
+                src='/right.webp'
                 className='absolute w-[960px] top-0 right-0 rounded-4xl'
                 loading="lazy"
                 alt="Right decoration"
             />
             <img
-                data-src='/threeLeft.webp'
+                src='/threeLeft.webp'
                 className='absolute BenefitsShd top-[550px] left-0 rounded-4xl'
                 loading="lazy"
                 alt="Left decoration"
@@ -49,8 +49,8 @@ export const Benefits: FC<BenefitsProps> = () => {
                         <div className='BenefitsListItem' key={ind}>
                             <div className='BenefitsListItemNum'>
                                 0{ind + 1}
-                                <img loading='lazy' data-src='./Benefits/corner.png' className='BenefitsCorner1' />
-                                <img loading='lazy' data-src='./Benefits/corner.png' className='BenefitsCorner2' />
+                                <img loading='lazy' src='./Benefits/corner.png' className='BenefitsCorner1' />
+                                <img loading='lazy' src='./Benefits/corner.png' className='BenefitsCorner2' />
                             </div>
                             <span className='BenefitsListItemTitle'>{item.title}</span>
                             <span className='BenefitsListItemText mono'>{item.text}</span>

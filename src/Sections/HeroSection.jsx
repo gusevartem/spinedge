@@ -141,7 +141,6 @@ const OptimizedImage = React.memo(({ src, alt, className, style, ref }) => (
         src={src}
         alt={alt}
         style={style}
-        loading="lazy"
         decoding="async"
     />
 ));
