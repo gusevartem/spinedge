@@ -1,19 +1,19 @@
 import React, { useEffect, useRef } from 'react'
-import {type FC} from 'react'
+import { type FC } from 'react'
 
 import './offers.css'
 import AnimatedCircle from '../../Components/AnimatedCircle'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 
-interface OffersProps {}
+interface OffersProps { }
 
-export const Offers:FC<OffersProps> = () => {
+export const Offers: FC<OffersProps> = () => {
     const circleRef = useRef(null);
     const lightRef = useRef(null);
 
     useEffect(() => {
-        let tl:any = null;
+        let tl: any = null;
 
         const initAnimation = () => {
             if (!circleRef.current || !lightRef.current) return;
@@ -75,13 +75,13 @@ export const Offers:FC<OffersProps> = () => {
 
     return (
         <div className='OffersSec' >
-            <img src='./shum.webp' className='tradShum1' />
+            <img loading='lazy' src='./shum.webp' className='tradShum1' />
             <div className='OffersShadow1'></div>
             <div className='OffersShadow2' ></div>
             <div className='OffersBody' >
                 <div className='CenterShadow' ></div>
-                <img src='./Offers/corner.webp' className='Corner1' />
-                <img src='./Offers/corner.webp' className='Corner2' />
+                <img loading='lazy' src='./Offers/corner.webp' className='Corner1' />
+                <img loading='lazy' src='./Offers/corner.webp' className='Corner2' />
                 <div className='LeftGroup' >
                     {/* <span className='Title'>
                         SpinEdge offers Universal <br /> AI Accelerator - <p>from <br /> Edge to Cloud, from <br /> Inference to training </p>
@@ -94,7 +94,7 @@ export const Offers:FC<OffersProps> = () => {
             </div>
 
             <div className='PlataWrap' >
-                <img src='./Offers/plata.webp' className='Plata' />
+                <img loading='lazy' src='./Offers/plata.webp' className='Plata' />
                 <AnimatedCircle id={''} lottieRef={circleRef} customStyle={`OffersSpin`} width={window.innerWidth < 640 ? 110 : 160} height={window.innerWidth < 640 ? 110 : 160} />
             </div>
         </div>

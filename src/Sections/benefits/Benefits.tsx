@@ -24,8 +24,8 @@ export const Benefits: FC<BenefitsProps> = () => {
 
     return (
         <div className='BenefitsSec' id="why">
-            <img src='./Benefits/car1.webp' className='BenefitsCar1' />
-            <img src='./Case2/car2.png' className='BenefitsCar2' />
+            <img loading='lazy' src='./Benefits/car1.webp' className='BenefitsCar1' />
+            <img loading='lazy' src='./Case2/car2.png' className='BenefitsCar2' />
             <div className='benefitsCenterShadow'></div>
             <img
                 src='/right.webp'
@@ -49,8 +49,8 @@ export const Benefits: FC<BenefitsProps> = () => {
                         <div className='BenefitsListItem' key={ind}>
                             <div className='BenefitsListItemNum'>
                                 0{ind + 1}
-                                <img src='./Benefits/corner.png' className='BenefitsCorner1' />
-                                <img src='./Benefits/corner.png' className='BenefitsCorner2' />
+                                <img loading='lazy' src='./Benefits/corner.png' className='BenefitsCorner1' />
+                                <img loading='lazy' src='./Benefits/corner.png' className='BenefitsCorner2' />
                             </div>
                             <span className='BenefitsListItemTitle'>{item.title}</span>
                             <span className='BenefitsListItemText mono'>{item.text}</span>

@@ -8,11 +8,11 @@ const FourFone = ({ id, children, heightBlur }) => {
         >
 
 
-            <img src='./shum.webp' className='fourShum1' />
-            <img src='./shum.webp' className='fourShum2' />
+            <img loading='lazy' src='./shum.webp' className='fourShum1' />
+            <img loading='lazy' src='./shum.webp' className='fourShum2' />
             <img
                 className={`absolute block lg:hidden left-0 min-h-[1662px] select-none pointer-events-none z-0 rounded-4xl`}
-
+                loading='lazy'
                 src="/Four/heightBlut.webp"
                 alt="White Blur"
             />
