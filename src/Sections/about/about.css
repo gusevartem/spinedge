@@ -32,6 +32,8 @@
 
 .aboutShum1 {
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
     object-fit: cover;
     left: 0;
@@ -41,6 +43,8 @@
 
 .aboutShum2 {
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
     object-fit: cover;
     left: 0;
@@ -50,30 +54,41 @@
 
 .aboutShum3 {
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
     object-fit: cover;
     left: 0;
     position: absolute;
     top: 200vh
 }
+
 .aboutShum4 {
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
     object-fit: cover;
     left: 0;
     position: absolute;
     top: 300vh
 }
+
 .aboutShum5 {
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
     object-fit: cover;
     left: 0;
     position: absolute;
     top: 400vh
 }
+
 .aboutShum6 {
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
     object-fit: cover;
     left: 0;
@@ -87,6 +102,7 @@
     top: 0;
     width: 100%;
 }
+
 .LinesBg2 {
     position: absolute;
     left: -50%;
@@ -136,6 +152,7 @@
     box-sizing: border-box;
     padding: 10px;
     background: #0304038C;
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     left: 10px;
     display: flex;
@@ -170,7 +187,9 @@
 .ImgInfoTitle {
     font-size: 15px;
     font-weight: 700;
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #586b58 0%, rgba(225, 255, 222, 0.1) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #586b58 0%, rgba(225, 255, 222, 0.1) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -180,7 +199,9 @@
 .ImgInfoText {
     font-size: 15px;
     font-weight: 700;
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -220,7 +241,7 @@
     text-align: center;
 }
 
-.MiniSectNum > p {
+.MiniSectNum>p {
     font-size: 19px;
 }
 
@@ -228,23 +249,21 @@
     font-size: 37px;
     font-weight: 700;
     line-height: 43px;
-    background: radial-gradient(
-        91.74% 158.57% at 50% 50%, 
-        rgba(225, 255, 222, 0.4) 0%, 
-        rgba(225, 255, 222, 0.4) 100%
-      );
+    background: radial-gradient(91.74% 158.57% at 50% 50%,
+            rgba(225, 255, 222, 0.4) 0%,
+            rgba(225, 255, 222, 0.4) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 
-   
+
     span {
-         background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
+        background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
     }
-    
+
 }
 
 .FirstInfoText {
@@ -258,7 +277,7 @@
 
 }
 
-.FirstInfoText > span {
+.FirstInfoText>span {
     font-weight: 800;
 }
 
@@ -297,9 +316,7 @@
     justify-content: center;
     gap: 20px;
 
-    &Item {
-        
-    }
+    &Item {}
 }
 
 .SecondListItem {
@@ -328,7 +345,7 @@
     background: #FFFFFF14;
 }
 
-.IcoWrap > img {
+.IcoWrap>img {
     width: 45%;
     height: 45%;
 }
@@ -357,66 +374,66 @@
     justify-content: center;
 }
 
-.CompanyList1 > img:nth-child(1) {
+.CompanyList1>img:nth-child(1) {
     width: 60px;
     height: 52px;
 }
 
-.CompanyList1 > img:nth-child(2) {
+.CompanyList1>img:nth-child(2) {
     width: 63px;
     height: 35px;
 }
 
-.CompanyList1 > img:nth-child(3) {
+.CompanyList1>img:nth-child(3) {
     width: 82px;
     height: 33px;
 }
 
-.CompanyList1 > img:nth-child(4) {
+.CompanyList1>img:nth-child(4) {
     width: 84px;
     height: 28px;
 }
 
 /* /// */
 
-.CompanyList2 > img:nth-child(1) {
+.CompanyList2>img:nth-child(1) {
     width: 83px;
     height: 28px;
 }
 
-.CompanyList2 > img:nth-child(2) {
+.CompanyList2>img:nth-child(2) {
     width: 115px;
     height: 33px;
 }
 
-.CompanyList2 > img:nth-child(3) {
+.CompanyList2>img:nth-child(3) {
     width: 60px;
     height: 37px;
 }
 
-.CompanyList2 > img:nth-child(4) {
+.CompanyList2>img:nth-child(4) {
     width: 42px;
     height: 32px;
 }
 
 /*  */
 
-.CompanyList3 > img:nth-child(1) {
+.CompanyList3>img:nth-child(1) {
     width: 50px;
     height: 33px;
 }
 
-.CompanyList3 > img:nth-child(2) {
+.CompanyList3>img:nth-child(2) {
     width: 73px;
     height: 17px;
 }
 
-.CompanyList3 > img:nth-child(3) {
+.CompanyList3>img:nth-child(3) {
     width: 42px;
     height: 36px;
 }
 
-.CompanyList3 > img:nth-child(4) {
+.CompanyList3>img:nth-child(4) {
     width: 54px;
     height: 36px;
 }
@@ -469,11 +486,9 @@
 }
 
 .FoundersTitle {
-    background: radial-gradient(
-        91.74% 158.57% at 50% 50%, 
-        rgba(225, 255, 222, 0.4) 0%, 
-        rgba(225, 255, 222, 0.4) 100%
-    );
+    background: radial-gradient(91.74% 158.57% at 50% 50%,
+            rgba(225, 255, 222, 0.4) 0%,
+            rgba(225, 255, 222, 0.4) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -526,8 +541,10 @@
 
 .FoundersText {
     background:
-    radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.10) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-    
+        radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.10) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -567,72 +584,72 @@
     .ThirdBlock {
         padding-top: 40px;
     }
-    
-    .MiniSectNum > img {
+
+    .MiniSectNum>img {
         width: 15px;
     }
 
 
-    .CompanyList1 > img:nth-child(1) {
+    .CompanyList1>img:nth-child(1) {
         width: 40px;
         height: 34px;
     }
-    
-    .CompanyList1 > img:nth-child(2) {
+
+    .CompanyList1>img:nth-child(2) {
         width: 42px;
         height: 22px;
     }
-    
-    .CompanyList1 > img:nth-child(3) {
+
+    .CompanyList1>img:nth-child(3) {
         width: 57px;
         height: 23px;
     }
-    
-    .CompanyList1 > img:nth-child(4) {
+
+    .CompanyList1>img:nth-child(4) {
         width: 55px;
         height: 18px;
     }
 
-    .CompanyList1 > img:nth-child(5) {
+    .CompanyList1>img:nth-child(5) {
         width: 54px;
         height: 18px;
     }
-    
+
     /* /// */
-    
-    .CompanyList2 > img:nth-child(1) {
+
+    .CompanyList2>img:nth-child(1) {
         width: 77px;
         height: 22px;
     }
-    
-    .CompanyList2 > img:nth-child(2) {
+
+    .CompanyList2>img:nth-child(2) {
         width: 38px;
         height: 24px;
     }
-    
-    .CompanyList2 > img:nth-child(3) {
+
+    .CompanyList2>img:nth-child(3) {
         width: 27px;
         height: 21px;
     }
-    
-    .CompanyList2 > img:nth-child(4) {
+
+    .CompanyList2>img:nth-child(4) {
         width: 32px;
         height: 21px;
     }
 
-    .CompanyList2 > img:nth-child(5) {
+    .CompanyList2>img:nth-child(5) {
         width: 47px;
         height: 11px;
     }
-    
+
     /*  */
-    
-    .CompanyList3 > img:nth-child(1) {
+
+    .CompanyList3>img:nth-child(1) {
         width: 26px;
         height: 23px;
     }
-    
-    .CompanyList3 > img:nth-child(2) {
+
+    .CompanyList3>img:nth-child(2) {
         width: 35px;
         height: 23px;
     }
@@ -646,7 +663,7 @@
         width: 100px;
     }
 
-    .ThirdBlock  {
+    .ThirdBlock {
         padding-bottom: 30px;
     }
 
@@ -668,7 +685,7 @@
         font-size: 11px;
     }
 
-    .MiniSectNum > p {
+    .MiniSectNum>p {
         font-size: 10px;
     }
 
@@ -685,7 +702,7 @@
     .SecondTitle {
         font-size: 19px;
     }
-    
+
     .ImgInfoBlock {
         max-width: 80%;
     }
@@ -740,7 +757,7 @@
         height: 45px;
     }
 
-    .FounderInfoSubtitle  {
+    .FounderInfoSubtitle {
         font-size: 8px;
         margin-top: 5px;
     }
@@ -753,7 +770,7 @@
         margin-top: 100px;
     }
 
-    .SecondListItemText  {
+    .SecondListItemText {
         font-size: 13px;
     }
 
@@ -772,7 +789,7 @@
     .AdvisorsAboutList {
         display: none;
     }
-    
+
     .FoundersTopGroup {
         flex-direction: column;
     }
@@ -816,11 +833,12 @@
         overflow: hidden;
     }
 
-    .ThirdBlockText, .FirstInfoText{
+    .ThirdBlockText,
+    .FirstInfoText {
         font-size: 12px;
 
     }
-    
+
     .FirstInfoTitle {
         font-size: 23px;
         line-height: 25px;
@@ -834,6 +852,8 @@
 @media screen and (max-width: 650px) {
     .FirstFoneBlock {
         height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -841,5 +861,7 @@
 
     .FirstFoneBgSome {
         height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
     }
 }

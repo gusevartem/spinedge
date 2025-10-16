@@ -62,7 +62,7 @@ const Blog = ({ post }) => {
                 className={
                     "bg-[rgba(255,255,255,0.05)] lg:p-[50px] p-[20px] flex flex-col gap-20 items-start justify-start relative "
                 }
-                style={{ backdropFilter: "blur(7.5px)" }}
+                style={{ backdropFilter: "blur(7.5px)", WebkitBackdropFilter: "blur(7.5px)" }}
             >
                 <div
                     className="text-[#ffffff] text-left mono lg:text-lg text-[14px] leading-[30px] font-normal relative self-stretch"

@@ -17,6 +17,8 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     z-index: 10;
     object-fit: cover;
 }
@@ -86,7 +88,9 @@
 .TradTitle {
     font-size: 13px;
     font-weight: 400;
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #00DA90 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #00DA90 0%, rgba(225, 255, 222, 0.7) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -108,7 +112,9 @@
 }
 
 .TradText {
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -116,7 +122,9 @@
     font-weight: 400;
 
     span {
-        background: radial-gradient(91.74% 158.57% at 50% 50%, #00E599 0%, rgba(0, 229, 153, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+        background: radial-gradient(91.74% 158.57% at 50% 50%, #00E599 0%, rgba(0, 229, 153, 0.45) 100%)
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+        ;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -150,6 +158,7 @@
     box-sizing: border-box;
     padding: 25px;
     border: 1px solid #FFFFFF0D;
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
     background: #FFFFFF03;
     width: 100%;
@@ -173,7 +182,9 @@
 }
 
 .TradSubTitle {
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.7) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -182,7 +193,9 @@
 }
 
 .TradSubText {
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -200,7 +213,7 @@
 .TradSubInfoClone {
     display: none;
 
-    
+
 }
 
 .TradPlataMob {

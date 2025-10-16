@@ -31,24 +31,24 @@ export const About: FC<AboutProps> = () => {
 
     return (
         <div className='AboutSec' id="about" >
-            <img loading='lazy' src='./shum.webp' className='aboutShum1' />
-            <img loading='lazy' src='./shum.webp' className='aboutShum2' />
-            <img loading='lazy' src='./shum.webp' className='aboutShum3' />
+            <img loading='lazy' data-src='./shum.webp' className='aboutShum1' />
+            <img loading='lazy' data-src='./shum.webp' className='aboutShum2' />
+            <img loading='lazy' data-src='./shum.webp' className='aboutShum3' />
             <div className='AboutGpt1' ></div>
             <div className='AboutGpt2' ></div>
-            <img loading='lazy' src='./shum.webp' className='aboutShum4' />
+            <img loading='lazy' data-src='./shum.webp' className='aboutShum4' />
             {window.innerWidth < 1000 && <div className="absolute z-[2] top-0 right-[-20px] w-[40%] h-[100%] opacity-[50%] bg-gradient-to-r from-transparent to-black pointer-events-none" />}
             {window.innerWidth < 1000 && <div className="absolute z-[2] top-[-100px] left-[-20px] w-[40%] h-[100%] opacity-[50%] bg-gradient-to-l from-transparent to-black pointer-events-none" />}
-            <img loading='lazy' src='./shum.webp' className='aboutShum5' />
-            <img loading='lazy' src='./shum.webp' className='aboutShum6' />
+            <img loading='lazy' data-src='./shum.webp' className='aboutShum5' />
+            <img loading='lazy' data-src='./shum.webp' className='aboutShum6' />
             <div className='AboutCenterShadow' ></div>
-            <img loading='lazy' src='./About/linesBg.webp' className='LinesBg' />
-            <img loading='lazy' src='./About/linesBg.webp' className='LinesBg2' />
-            <img loading='lazy' src='./About/figuraBg.png' className='FiguraBg' />
+            <img loading='lazy' data-src='./About/linesBg.webp' className='LinesBg' />
+            <img loading='lazy' data-src='./About/linesBg.webp' className='LinesBg2' />
+            <img loading='lazy' data-src='./About/figuraBg.png' className='FiguraBg' />
             <div className='AboutBody z-[4]' >
                 <div className='FirstBlock' >
                     <div className='ImgWrap' >
-                        <img loading='lazy' src='./About/place.png' className='PlaceImg' />
+                        <img loading='lazy' data-src='./About/place.png' className='PlaceImg' />
                     </div>
                     <div className='FirstInfoBlock' >
                         <p className='FirstInfoTitle'>
@@ -58,7 +58,7 @@ export const About: FC<AboutProps> = () => {
                             Our founding team brings <span>over 120 years of combined R&D and business experience,</span> spanning deep-tech innovation, semiconductor development, and Hi Tech commercialization
                         </p>
                         <div className='ImgWrap ImgWrapClone' >
-                            <img loading='lazy' src='./About/place.png' className='PlaceImg' />
+                            <img loading='lazy' data-src='./About/place.png' className='PlaceImg' />
                         </div>
                         <span className='AboutSubtitle mono' >[ mission ]</span>
                         <p className='FirstInfoText mono'>
@@ -73,7 +73,7 @@ export const About: FC<AboutProps> = () => {
                     </div>
                 </div>
                 <div className='SecondBlock' >
-                    <img loading='lazy' src='./About/bgMob.png' className='FiguraBgMob' />
+                    <img loading='lazy' data-src='./About/bgMob.png' className='FiguraBgMob' />
                     <span className='SecondTitle'>
                         SpinEdge’s architecture <br /> is designed to:
                     </span>
@@ -82,7 +82,7 @@ export const About: FC<AboutProps> = () => {
                             list.map((item, ind) => (
                                 <div key={ind} className='SecondListItem' >
                                     <div className='IcoWrap' >
-                                        <img loading='lazy' src={item.ico} />
+                                        <img loading='lazy' data-src={item.ico} />
                                     </div>
                                     <span className='SecondListItemText mono' >{item.text}</span>
                                 </div>
@@ -103,26 +103,26 @@ export const About: FC<AboutProps> = () => {
                         <div className='ThirdRightBlock' >
                             <div className={`CompanyList CompanyList1`} >
                                 {window.innerWidth < 1000
-                                    ? compaies.slice(0, 5).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' src={item} />)
-                                    : compaies.slice(0, 4).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' src={item} />)
+                                    ? compaies.slice(0, 5).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' data-src={item} />)
+                                    : compaies.slice(0, 4).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' data-src={item} />)
                                 }
                             </div>
                             <div className='CompanyList CompanyList2' >
                                 {window.innerWidth < 1000
-                                    ? compaies.slice(5, 10).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' src={item} />)
-                                    : compaies.slice(4, 8).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' src={item} />)
+                                    ? compaies.slice(5, 10).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' data-src={item} />)
+                                    : compaies.slice(4, 8).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' data-src={item} />)
                                 }
                             </div>
                             <div className='CompanyList CompanyList3' >
                                 {window.innerWidth < 1000
-                                    ? compaies.slice(10, 12).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' src={item} />)
-                                    : compaies.slice(8, 12).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' src={item} />)
+                                    ? compaies.slice(10, 12).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' data-src={item} />)
+                                    : compaies.slice(8, 12).map((item, ind) => <img loading='lazy' key={ind} className='CompanyImg' data-src={item} />)
                                 }
                             </div>
                         </div>
                     </div>
                     <div className='Founders' id="team" >
-                        <span className='FoundersTitle' >founders: <img loading='lazy' className='SlideImg' src='./slide.webp' /></span>
+                        <span className='FoundersTitle' >founders: <img loading='lazy' className='SlideImg' data-src='./slide.webp' /></span>
                         <div className='flex' >
                             <Swiper
                                 slidesPerView={window.innerWidth < 910 ? 2.5 : 3}
@@ -131,7 +131,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/pers1.1.webp' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/pers1.1.webp' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Dr. Dmitry <br /> Leshchiner</span>
                                                 <span className='FounderInfoSubtitle mono' >CTO</span>
@@ -143,7 +143,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/pers1.2.webp' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/pers1.2.webp' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Dr. Konstantin <br /> Zvezdin</span>
                                                 <span className='FounderInfoSubtitle mono' >CEO</span>
@@ -155,7 +155,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/pers1.3.webp' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/pers1.3.webp' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Dr. Nir <br /> Karasikov</span>
                                                 <span className='FounderInfoSubtitle mono'  >Chairman</span>
@@ -170,7 +170,7 @@ export const About: FC<AboutProps> = () => {
                     <div className='Founders' >
                         <span className='FoundersTitle gradient-text-green' >
                             team members:
-                            <img loading='lazy' className='SlideImg' src='./slide.webp' />
+                            <img loading='lazy' className='SlideImg' data-src='./slide.webp' />
                         </span>
                         <div className='flex' >
                             <Swiper
@@ -180,7 +180,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image2.1.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image2.1.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Vladimir <br /> Krupnik</span>
                                                 <span className='FounderInfoSubtitle mono' >CBO</span>
@@ -192,7 +192,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image2.2.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image2.2.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Uri <br /> Darvish</span>
                                                 <span className='FounderInfoSubtitle mono' >Financial Controller</span>
@@ -204,7 +204,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image2.3.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image2.3.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Menachem <br /> Shoval</span>
                                                 <span className='FounderInfoSubtitle mono' >COO</span>
@@ -217,12 +217,12 @@ export const About: FC<AboutProps> = () => {
                         </div>
                     </div>
                     <div className='Founders' >
-                        <span className='FoundersTitle' >advisors: <img loading='lazy' className='SlideImg' src='./slide.webp' /></span>
+                        <span className='FoundersTitle' >advisors: <img loading='lazy' className='SlideImg' data-src='./slide.webp' /></span>
                         <div className='AdvisorsAboutList' >
                             <SwiperSlide>
                                 <div className='FoundersListItem' >
                                     <div className='FoundersTopGroup'>
-                                        <img loading='lazy' src='./About/image3.1.png' className='FounderImg' />
+                                        <img loading='lazy' data-src='./About/image3.1.png' className='FounderImg' />
                                         <div className='FounderInfo' >
                                             <span className='FounderInfoTitle' >Doron <br /> Nevo</span>
                                             <span className='FounderInfoSubtitle mono' >Investors Relation</span>
@@ -234,7 +234,7 @@ export const About: FC<AboutProps> = () => {
                             <SwiperSlide>
                                 <div className='FoundersListItem' >
                                     <div className='FoundersTopGroup'>
-                                        <img loading='lazy' src='./About/image3.2.png' className='FounderImg' />
+                                        <img loading='lazy' data-src='./About/image3.2.png' className='FounderImg' />
                                         <div className='FounderInfo' >
                                             <span className='FounderInfoTitle' >Prof. Ching <br /> Ray Chang</span>
                                             <span className='FounderInfoSubtitle mono' >Fabs Advisor</span>
@@ -246,7 +246,7 @@ export const About: FC<AboutProps> = () => {
                             <SwiperSlide>
                                 <div className='FoundersListItem' >
                                     <div className='FoundersTopGroup'>
-                                        <img loading='lazy' src='./About/image3.3.png' className='FounderImg' />
+                                        <img loading='lazy' data-src='./About/image3.3.png' className='FounderImg' />
                                         <div className='FounderInfo' >
                                             <span className='FounderInfoTitle' >Avi <br /> Mendelson</span>
                                             <span className='FounderInfoSubtitle mono' >Technology Advisor</span>
@@ -258,7 +258,7 @@ export const About: FC<AboutProps> = () => {
                             <SwiperSlide>
                                 <div className='FoundersListItem' >
                                     <div className='FoundersTopGroup'>
-                                        <img loading='lazy' src='./About/image3.4.png' className='FounderImg' />
+                                        <img loading='lazy' data-src='./About/image3.4.png' className='FounderImg' />
                                         <div className='FounderInfo' >
                                             <span className='FounderInfoTitle' >Prof. Yosi <br /> Shacham-Diamand</span>
                                             <span className='FounderInfoSubtitle mono' >Technology Advisor</span>
@@ -276,7 +276,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image3.1.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image3.1.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Doron <br /> Nevo</span>
                                                 <span className='FounderInfoSubtitle mono' >Investors Relation</span>
@@ -288,7 +288,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image3.2.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image3.2.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Prof. Ching <br /> Ray Chang</span>
                                                 <span className='FounderInfoSubtitle mono' >Fabs Advisor</span>
@@ -300,7 +300,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image3.3.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image3.3.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Avi <br /> Mendelson</span>
                                                 <span className='FounderInfoSubtitle mono' >Technology Advisor</span>
@@ -312,7 +312,7 @@ export const About: FC<AboutProps> = () => {
                                 <SwiperSlide>
                                     <div className='FoundersListItem' >
                                         <div className='FoundersTopGroup'>
-                                            <img loading='lazy' src='./About/image3.4.png' className='FounderImg' />
+                                            <img loading='lazy' data-src='./About/image3.4.png' className='FounderImg' />
                                             <div className='FounderInfo' >
                                                 <span className='FounderInfoTitle' >Prof. Yosi <br /> Shacham-Diamand</span>
                                                 <span className='FounderInfoSubtitle mono' >Technology Advisor</span>

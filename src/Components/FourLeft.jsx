@@ -60,7 +60,7 @@ const FourLeft = () => {
                             <FourCard
                                 customPosition={'!absolute block SpintronicMob md:hidden'} text={`Spintronic<br/> Synapse`} />
                             <div className='relative MobLight top-[-150px] left-[10px] '>
-                                <img ref={lightRef} className='absolute MobLightLine left-[80px] w-[150px] -top-[28px]' src='/Four/light.webp' />
+                                <img ref={lightRef} className='absolute MobLightLine left-[80px] w-[150px] -top-[28px]' data-src='/Four/light.webp' />
                                 <AnimatedCircle lottieRef={circleRef} customStyle={`sticky MobLightCircle left-[45px]`} width={`100`} height={`100`} />
                             </div>
                         </div>

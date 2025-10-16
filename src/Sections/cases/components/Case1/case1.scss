@@ -31,14 +31,14 @@
 .Case1Corner1 {
     transform: rotate(180deg);
     position: absolute;
-    left:0;
+    left: 0;
     bottom: 0;
 }
 
 .Case1Corner2 {
     transform: rotate(0deg);
     position: absolute;
-    right:0;
+    right: 0;
     top: 0;
 }
 
@@ -107,7 +107,7 @@
 
 .Diagrama {
     width: 100%;
-    z-index: 3; 
+    z-index: 3;
     position: relative;
     height: 100%;
 }
@@ -151,7 +151,7 @@
     position: absolute;
     right: 0;
     z-index: 2;
-    top: -125%;    
+    top: -125%;
     max-width: 240px;
 
     @media screen and (max-width: 1230px) {
@@ -177,6 +177,7 @@
     background: #00825726;
     right: 110px;
     z-index: 6;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     top: -55%;
     color: #00E599;
@@ -212,7 +213,8 @@
     border-left: 10px solid transparent;
     border-right: 7.5px solid transparent;
     /* цвет можно задать 8-значным hex или rgba */
-    border-top: 15px solid #00825726; /* или: rgba(0,130,87,0.149) */
+    border-top: 15px solid #00825726;
+    /* или: rgba(0,130,87,0.149) */
     transform: translateX(-50%);
 
 }

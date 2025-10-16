@@ -38,6 +38,7 @@
     max-width: 70%;
     box-sizing: border-box;
     padding: 100px 620px 100px 70px;
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
     position: relative;
 }
@@ -81,17 +82,17 @@
     font-size: 37px;
     line-height: 40px;
     font-weight: 700;
-    background: red /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: red
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 
     p {
-        background: radial-gradient(
-  91.74% 158.57% at 50% 50%, 
-  rgba(225, 255, 222, 0.4) 0%, 
-  rgba(225, 255, 222, 0.4) 100%
-);
+        background: radial-gradient(91.74% 158.57% at 50% 50%,
+                rgba(225, 255, 222, 0.4) 0%,
+                rgba(225, 255, 222, 0.4) 100%);
 
         -webkit-background-clip: text;
         background-clip: text;
@@ -105,7 +106,9 @@
 
 
 .Text {
-    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: radial-gradient(91.74% 158.57% at 50% 50%, #E1FFDE 0%, rgba(225, 255, 222, 0.45) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -114,9 +117,7 @@
     font-weight: 400;
 }
 
-.MobLight {
-    
-}
+.MobLight {}
 
 .Plata {
     width: 100%;
@@ -169,7 +170,7 @@
         width: 240px;
         height: 240px;
         bottom: 150px;
-        
+
     }
 
     .OffersSpin {

@@ -13,11 +13,11 @@ export const Cases: FC<CasesProps> = () => {
 
     return (
         <div className='CasesSec' id="cases" >
-            <img loading='lazy' src='./shum.webp' className='caseShum1' />
-            <img loading='lazy' src='./shum.webp' className='caseShum2' />
-            <img loading='lazy' src='./shum.webp' className='caseShum3' />
-            <img loading='lazy' src='./shum.webp' className='caseShum4' />
-            <img loading='lazy' src='./shum.webp' className='caseShum5' />
+            <img loading='lazy' data-src='./shum.webp' className='caseShum1' />
+            <img loading='lazy' data-src='./shum.webp' className='caseShum2' />
+            <img loading='lazy' data-src='./shum.webp' className='caseShum3' />
+            <img loading='lazy' data-src='./shum.webp' className='caseShum4' />
+            <img loading='lazy' data-src='./shum.webp' className='caseShum5' />
             <div className='casesTopShadow' ></div>
             <div className='casesCenterShadow' ></div>
             <div className='CasesBody' >

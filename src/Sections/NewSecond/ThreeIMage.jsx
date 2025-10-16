@@ -43,7 +43,7 @@ const ThreeIMage = () => {
         >
             <img
                 ref={lightRef}
-                src="/NewSecond/blur.png"
+                data-src="/NewSecond/blur.png"
                 alt="Blur Effect"
                 className="fade-scale-up opacity-100 lg:opacity-0 WordsBlur absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none light"
             />
