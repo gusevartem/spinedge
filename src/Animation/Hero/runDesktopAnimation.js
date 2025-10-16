@@ -60,7 +60,7 @@ export const runDesktopAnimation = (refs, getVisible) => {
                             trigger: ballRef.current,
                             start: "50% 20%",
                             endTrigger: mainRef.current,
-                            end: "bottom+=200 top",
+                            end: "bottom 17%",
                             scrub: 1,
                             pin: true,
                             immediateRender: false,
