@@ -1,23 +1,39 @@
 import React, { useEffect, useState } from "react";
 
-const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
+const SmartImage = ({ src, lowSrc, alt = "", className = "" }) => {
     const [isLowQuality, setIsLowQuality] = useState(false);
-    const [isOnline, setIsOnline] = useState(typeof navigator !== "undefined" ? navigator.onLine : true);
+    const [isOnline, setIsOnline] = useState(
+        typeof navigator !== "undefined" ? navigator.onLine : true
+    );
 
-    // --- Генерация пути для lowSrc ---
+    // --- Генерация lowSrc ---
     const computedLowSrc = lowSrc || (() => {
-        // Пример: src = "/Four/left.webp"
-        // => "/low_quality/Four/left.webp"
         if (!src) return "";
+
         try {
-            // Разбиваем путь, добавляем префикс /low_quality
-            if (src.startsWith("/")) {
-                return "/low_quality" + src;
-            } else if (src.startsWith("./")) {
-                return "./low_quality" + src.slice(1);
-            } else {
-                return "low_quality/" + src;
+            let resultSrc = src;
+
+            // Если пути начинаются с './', убираем точку для единообразия
+            if (resultSrc.startsWith("./")) resultSrc = resultSrc.slice(1);
+
+            // Если уже есть low_quality — возвращаем как есть
+            if (resultSrc.includes("/low_quality/")) return resultSrc;
+
+            // Если путь уже содержит /public/ — вставляем low_quality после него
+            if (resultSrc.includes("/public/")) {
+                return resultSrc.replace(
+                    /\/public\//,
+                    "/public/low_quality/"
+                );
             }
+
+            // Если /public/ нет — добавляем его в начало
+            if (resultSrc.startsWith("/")) {
+                return "/public/low_quality" + resultSrc;
+            }
+
+            // fallback (например, просто имя файла)
+            return "/public/low_quality/" + resultSrc;
         } catch {
             return src;
         }
@@ -56,7 +72,6 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
         };
     }, []);
 
-    // --- Placeholder, если офлайн ---
     if (!isOnline) {
         return (
             <div
@@ -68,7 +83,6 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
         );
     }
 
-    // --- Выбор картинки ---
     const imageToShow = isLowQuality ? computedLowSrc || src : src;
 
     return (
