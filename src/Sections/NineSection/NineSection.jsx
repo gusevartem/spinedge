@@ -125,10 +125,10 @@ const NineSection = () => {
                   className='w-full h-full object-contain object-bottom ' src='/ofice.webp'
                 />
                 <div className='ImgInfoBlock' >
-                  <SmartImage
+                  <img
                     src='./About/corner.png' className='AboutCorner1'
                   />
-                  <SmartImage
+                  <img
                     src='./About/corner.png' className='AboutCorner2'
                   />
                   <span className='ImgInfoTitle' >mail address:</span>

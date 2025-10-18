@@ -84,10 +84,10 @@ const Offers: FC<OffersProps> = () => {
             <div className='OffersShadow2' ></div>
             <div className='OffersBody' >
                 <div className='CenterShadow' ></div>
-                <SmartImage
+                <img
                     src='./Offers/corner.webp' className='Corner1'
                 />
-                <SmartImage
+                <img
                     src='./Offers/corner.webp' className='Corner2'
                 />
                 <div className='LeftGroup' >

@@ -18,16 +18,12 @@ const Traditional: FC<TraditionalProps> = () => {
             <div className='Shadow2' ></div>
             <div className='TraditionalBody' >
                 <div className='TradSubInfo TradSubInfoClone' >
-                    <SmartImage
-                        className='TradPlataMob'
-                        src='./Trad/plataMob.webp'
-                    />
-                    <SmartImage
-                        className='TradCorner' src='./Trad/corner.webp'
-                    />
-                    <SmartImage
-                        className='TradCorner2' src='./Trad/corner.webp'
-                    />
+
+
+                    <img className='TradPlataMob'
+                        src='./Trad/plataMob.webp' />
+                    <img className='TradCorner' src='./Trad/corner.webp' />
+                    <img className='TradCorner2' src='./Trad/corner.webp' />
                     <div className='TradSubBlock' >
                         <span className='TradSubTitle' >SpinEdge changes that:</span>
                         <p className='TradSubText mono' >By combining spintronic memory with analog compute, SpinEdge removes these bottlenecks — enabling ultra-efficient, real-time AI compute in applications where traditional hardware can’t be used.</p>
@@ -52,12 +48,8 @@ const Traditional: FC<TraditionalProps> = () => {
                         <SmartImage
                             className='TradPlata' src='./Trad/plata.webp'
                         />
-                        <SmartImage
-                            className='TradCorner' src='./Trad/corner.webp'
-                        />
-                        <SmartImage
-                            className='TradCorner2' src='./Trad/corner.webp'
-                        />
+                        <img className='TradCorner' src='./Trad/corner.webp' />
+                        <img className='TradCorner2' src='./Trad/corner.webp' />
                         <div className='TradSubBlock' >
                             <span className='TradSubTitle' >SpinEdge changes that:</span>
                             <p className='TradSubText mono' >By combining spintronic memory with analog compute, SpinEdge removes these bottlenecks — enabling ultra-efficient, real-time AI compute in applications where traditional hardware can’t be used.</p>

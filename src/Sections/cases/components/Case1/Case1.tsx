@@ -15,10 +15,10 @@ export const Case1: FC<Case1Props> = () => {
             <HeaderText num={1} title='Enables always-on AI in ultra-small, ultra-efficient devices' text='SpinEdge brings real-time AI to the tiniest form factors — including wearables, earbuds, smart home devices, and IoT nodes.' />
             <div className='CaseBody' >
                 <div className='Case3CenterShadow' ></div>
-                <SmartImage
+                <img
                     src='./Cases/corner.png' className='Case1Corner1'
                 />
-                <SmartImage
+                <img
                     src='./Cases/corner.png' className='Case1Corner2'
                 />
                 <div className='TextGroup' >

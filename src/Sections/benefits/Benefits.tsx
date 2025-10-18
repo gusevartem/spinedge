@@ -51,10 +51,10 @@ const Benefits: FC<BenefitsProps> = () => {
                         <div className='BenefitsListItem' key={ind}>
                             <div className='BenefitsListItemNum'>
                                 0{ind + 1}
-                                <SmartImage
+                                <img
                                     src='./Benefits/corner.png' className='BenefitsCorner1'
                                 />
-                                <SmartImage
+                                <img
                                     src='./Benefits/corner.png' className='BenefitsCorner2'
                                 />
                             </div>

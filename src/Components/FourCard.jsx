@@ -1,5 +1,4 @@
 import React from 'react'
-import SmartImage from '../Utils/SmartImage'
 
 const FourCard = ({ text, customPosition, ref = null }) => {
     return (
@@ -13,13 +12,8 @@ const FourCard = ({ text, customPosition, ref = null }) => {
 
         >
 
-
-            <SmartImage
-                src='/Four/left.webp' className='absolute  top-0 left-0 '
-            />
-            <SmartImage
-                src='/Four/right.webp' className='absolute bottom-0 right-0 '
-            />
+            <img loading='lazy' src='/Four/left.webp' className='absolute  top-0 left-0 ' />
+            <img loading='lazy' src='/Four/right.webp' className='absolute bottom-0 right-0 ' />
             <p
                 className="lg:text-[15px] mono gradient-text-green text-[9px] "
                 dangerouslySetInnerHTML={{ __html: text }}
