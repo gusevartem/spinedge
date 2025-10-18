@@ -3,6 +3,7 @@ import React, { type FC } from 'react'
 import './about.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import SmartImage from '../../Utils/SmartImage'
 
 const compaies = ['./About/comp1.webp', './About/comp2.webp', './About/comp3.webp', './About/comp4.webp', './About/comp5.webp', './About/comp6.webp', './About/comp7.webp', './About/comp8.webp', './About/comp9.webp', './About/comp10.webp', './About/comp11.webp', './About/comp12.webp']
 
@@ -31,24 +32,44 @@ const About: FC<AboutProps> = () => {
 
     return (
         <div className='AboutSec' id="about" >
-            <img loading='lazy' src='./shum.webp' className='aboutShum1' />
-            <img loading='lazy' src='./shum.webp' className='aboutShum2' />
-            <img loading='lazy' src='./shum.webp' className='aboutShum3' />
+            <SmartImage
+                src='./shum.webp' className='aboutShum1'
+            />
+            <SmartImage
+                src='./shum.webp' className='aboutShum2'
+            />
+            <SmartImage
+                src='./shum.webp' className='aboutShum3'
+            />
             <div className='AboutGpt1' ></div>
             <div className='AboutGpt2' ></div>
-            <img loading='lazy' src='./shum.webp' className='aboutShum4' />
+            <SmartImage
+                src='./shum.webp' className='aboutShum4'
+            />
             {window.innerWidth < 1000 && <div className="absolute z-[2] top-0 right-[-20px] w-[40%] h-[100%] opacity-[50%] bg-gradient-to-r from-transparent to-black pointer-events-none" />}
             {window.innerWidth < 1000 && <div className="absolute z-[2] top-[-100px] left-[-20px] w-[40%] h-[100%] opacity-[50%] bg-gradient-to-l from-transparent to-black pointer-events-none" />}
-            <img loading='lazy' src='./shum.webp' className='aboutShum5' />
-            <img loading='lazy' src='./shum.webp' className='aboutShum6' />
+            <SmartImage
+                src='./shum.webp' className='aboutShum5'
+            />
+            <SmartImage
+                src='./shum.webp' className='aboutShum6'
+            />
             <div className='AboutCenterShadow' ></div>
-            <img loading='lazy' src='./About/linesBg.webp' className='LinesBg' />
-            <img loading='lazy' src='./About/linesBg.webp' className='LinesBg2' />
-            <img loading='lazy' src='./About/figuraBg.png' className='FiguraBg' />
+            <SmartImage
+                src='./About/linesBg.webp' className='LinesBg'
+            />
+            <SmartImage
+                src='./About/linesBg.webp' className='LinesBg2'
+            />
+            <SmartImage
+                src='./About/figuraBg.png' className='FiguraBg'
+            />
             <div className='AboutBody z-[4]' >
                 <div className='FirstBlock' >
                     <div className='ImgWrap' >
-                        <img loading='lazy' src='./About/place.png' className='PlaceImg' />
+                        <SmartImage
+                            src='./About/place.png' className='PlaceImg'
+                        />
                     </div>
                     <div className='FirstInfoBlock' >
                         <p className='FirstInfoTitle'>
@@ -58,7 +79,9 @@ const About: FC<AboutProps> = () => {
                             Our founding team brings <span>over 120 years of combined R&D and business experience,</span> spanning deep-tech innovation, semiconductor development, and Hi Tech commercialization
                         </p>
                         <div className='ImgWrap ImgWrapClone' >
-                            <img loading='lazy' src='./About/place.png' className='PlaceImg' />
+                            <SmartImage
+                                src='./About/place.png' className='PlaceImg'
+                            />
                         </div>
                         <span className='AboutSubtitle mono' >[ mission ]</span>
                         <p className='FirstInfoText mono'>
@@ -73,7 +96,9 @@ const About: FC<AboutProps> = () => {
                     </div>
                 </div>
                 <div className='SecondBlock' >
-                    <img loading='lazy' src='./About/bgMob.png' className='FiguraBgMob' />
+                    <SmartImage
+                        src='./About/bgMob.png' className='FiguraBgMob'
+                    />
                     <span className='SecondTitle'>
                         SpinEdge’s architecture <br /> is designed to:
                     </span>
@@ -83,6 +108,7 @@ const About: FC<AboutProps> = () => {
                                 <div key={ind} className='SecondListItem' >
                                     <div className='IcoWrap' >
                                         <img loading='lazy' src={item.ico} />
+
                                     </div>
                                     <span className='SecondListItemText mono' >{item.text}</span>
                                 </div>

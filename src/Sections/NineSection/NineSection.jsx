@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import emailjs from "@emailjs/browser";
 import { useNavigate } from 'react-router-dom'
 import './formst.css'
+import SmartImage from '../../Utils/SmartImage';
 
 const NineSection = () => {
   const sectionRef = useRef(null)
@@ -120,11 +121,16 @@ const NineSection = () => {
             <p onClick={handleClickPolicy} className='lg:gradient-text-green lg:w-full cursor-pointer text-[#5B6765] mono md:text-[12px] text-center md:text-left text-[10px]'>By clicking the button, I consent to the processing of my <span className='underline'>personal data</span>.</p>
             <div className='flex justify-center items-center flex-col gap-6 lg:pb-26 pb-16 z-50  w-full pt-[65px] lg:pt-[45px]'>
               <div className='relative w-full max-w-[730px] max-h-[400px] overflow-hidden rounded-xl'>
-                <img loading='lazy' className='w-full h-full object-contain object-bottom ' src='/ofice.webp' />
-
+                <SmartImage
+                  className='w-full h-full object-contain object-bottom ' src='/ofice.webp'
+                />
                 <div className='ImgInfoBlock' >
-                  <img loading='lazy' src='./About/corner.png' className='AboutCorner1' />
-                  <img loading='lazy' src='./About/corner.png' className='AboutCorner2' />
+                  <SmartImage
+                    src='./About/corner.png' className='AboutCorner1'
+                  />
+                  <SmartImage
+                    src='./About/corner.png' className='AboutCorner2'
+                  />
                   <span className='ImgInfoTitle' >mail address:</span>
                   <span className='ImgInfoText' >152 Derech Menachem Begin Tel Aviv, Israel, 6492106. POB 138</span>
                 </div>

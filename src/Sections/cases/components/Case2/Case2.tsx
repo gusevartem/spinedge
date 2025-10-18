@@ -4,6 +4,7 @@ import './case2.css'
 
 import { HeaderText } from '../HeaderText/HeaderText'
 import AnimatedCircle from '../../../../Components/AnimatedCircle'
+import SmartImage from '../../../../Utils/SmartImage'
 
 interface Case2Props { }
 
@@ -87,22 +88,43 @@ export const Case2: FC<Case2Props> = () => {
                     </ul>
                 </div>
                 <div className='Case2ImagesGroup' >
-                    <img loading='lazy' src='./Case2/drone.webp' className='Drone' />
-                    <img loading='lazy' src='./Case2/droneMob.webp' className='DroneMob' />
-                    <img loading='lazy' src='./Case2/car1.webp' className='Case2Car1' />
-                    <img loading='lazy' src='./Case2/car1Mob.png' className='Case2Car1Mob' />
-                    <img loading='lazy' src='./Case2/car2.png' className='Case2Car2' />
-                    <img loading='lazy' src='./Case2/car2Mob.png' className='Case2Car2Mob' />
-                    <div className='Case2CenterImgWrap' >
-                        <img loading='lazy' src='./Case2/line1.webp' className='Case2Line1' />
-                        <img loading='lazy' src='./Case2/line2.webp' className='Case2Line2' />
-                        <img loading='lazy' src='./Case2/line3.webp' className='Case2Line3' />
-                        <AnimatedCircle id={''} lottieRef={circleRef} customStyle={`Case2Spin`} width={80} height={80} />
-                        <img loading='lazy' src='./Case2/lineTopMob.webp' className='Case2Line1Mob' />
-                        <img loading='lazy' src='./Case2/lineRightMob.webp' className='Case2Line2Mob' />
-                        <img loading='lazy' src='./Case2/lineLeftMob.webp' className='Case2Line3Mob' />
+                    <SmartImage
+                        src='./Case2/drone.webp' className='Drone'
+                    /><SmartImage
+                        src='./Case2/droneMob.webp' className='DroneMob'
+                    /><SmartImage
+                        src='./Case2/car1.webp' className='Case2Car1'
+                    /><SmartImage
+                        src='./Case2/car1Mob.png' className='Case2Car1Mob'
+                    /><SmartImage
+                        src='./Case2/car2.png' className='Case2Car2'
+                    /><SmartImage
+                        src='./Case2/car2Mob.png' className='Case2Car2Mob'
+                    />
 
-                        <img loading='lazy' src='./Case2/plata.webp' className='Case2Plata' />
+                    <div className='Case2CenterImgWrap' >
+                        <SmartImage
+                            src='./Case2/line1.webp' className='Case2Line1'
+                        />
+                        <SmartImage
+                            src='./Case2/line2.webp' className='Case2Line2'
+                        />
+                        <SmartImage
+                            src='./Case2/line3.webp' className='Case2Line3'
+                        />
+                        <AnimatedCircle id={''} lottieRef={circleRef} customStyle={`Case2Spin`} width={80} height={80} />
+                        <SmartImage
+                            src='./Case2/lineTopMob.webp' className='Case2Line1Mob'
+                        />
+                        <SmartImage
+                            src='./Case2/lineRightMob.webp' className='Case2Line2Mob'
+                        />
+                        <SmartImage
+                            src='./Case2/lineLeftMob.webp' className='Case2Line3Mob'
+                        />
+                        <SmartImage
+                            src='./Case2/plata.webp' className='Case2Plata'
+                        />
                     </div>
                 </div>
                 <ul className='Case2Text2 CaseText2Clone' >

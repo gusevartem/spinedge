@@ -3,6 +3,7 @@ import { type FC } from 'react'
 import './case1.scss'
 
 import { HeaderText } from '../HeaderText/HeaderText'
+import SmartImage from '../../../../Utils/SmartImage'
 
 interface Case1Props { }
 
@@ -14,8 +15,12 @@ export const Case1: FC<Case1Props> = () => {
             <HeaderText num={1} title='Enables always-on AI in ultra-small, ultra-efficient devices' text='SpinEdge brings real-time AI to the tiniest form factors — including wearables, earbuds, smart home devices, and IoT nodes.' />
             <div className='CaseBody' >
                 <div className='Case3CenterShadow' ></div>
-                <img loading='lazy' src='./Cases/corner.png' className='Case1Corner1' />
-                <img loading='lazy' src='./Cases/corner.png' className='Case1Corner2' />
+                <SmartImage
+                    src='./Cases/corner.png' className='Case1Corner1'
+                />
+                <SmartImage
+                    src='./Cases/corner.png' className='Case1Corner2'
+                />
                 <div className='TextGroup' >
                     <p className={`Case1Text CaseText1 mono`} >Our non-volatile, analog-native architecture delivers inference directly in memory, eliminating the need for fans, cloud access, or off-chip compute.</p>
                     <ul className='CaseText2' >
@@ -25,14 +30,22 @@ export const Case1: FC<Case1Props> = () => {
                 </div>
                 <div className='Case1ImagesGroup' >
                     <div className='DiagramaWrap' >
-                        <img loading='lazy' src='./Case1/img1.webp' className='Case1Img1' />
-                        <img loading='lazy' src='./Case1/imgMob.webp' className='Case1ImgMob' />
-                        <img loading='lazy' src='./Case1/img2.webp' className='Case1Img2' />
+                        <SmartImage
+                            src='./Case1/img1.webp' className='Case1Img1'
+                        />
+                        <SmartImage
+                            src='./Case1/imgMob.webp' className='Case1ImgMob'
+                        />
+                        <SmartImage
+                            src='./Case1/img2.webp' className='Case1Img2'
+                        />
                         <div className='Case1Upto mono' >
                             up to 1000 tops/w <br /> efficiency
                             <div className='Case1Tri' />
                         </div>
-                        <img loading='lazy' src='./Case1/diagrama.webp' className='Diagrama' />
+                        <SmartImage
+                            src='./Case1/diagrama.webp' className='Diagrama'
+                        />
                     </div>
                 </div>
             </div>

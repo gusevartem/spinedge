@@ -1,6 +1,7 @@
 import React, { type FC } from 'react';
 import ThreeIMage from '../NewSecond/ThreeIMage';
 import './benefits.css';
+import SmartImage from '../../Utils/SmartImage';
 
 const items = [
     {
@@ -24,20 +25,21 @@ const Benefits: FC<BenefitsProps> = () => {
 
     return (
         <div className='BenefitsSec' id="why">
-            <img loading='lazy' src='./Benefits/car1.webp' className='BenefitsCar1' />
-            <img loading='lazy' src='./Case2/car2.png' className='BenefitsCar2' />
+            <SmartImage
+                src='./Benefits/car1.webp' className='BenefitsCar1'
+            />
+            <SmartImage
+                src='./Case2/car2.png' className='BenefitsCar2'
+            />
+
             <div className='benefitsCenterShadow'></div>
-            <img
+            <SmartImage
                 src='/right.webp'
                 className='absolute w-[960px] top-0 right-0 rounded-4xl'
-                loading="lazy"
-                alt="Right decoration"
             />
-            <img
+            <SmartImage
                 src='/threeLeft.webp'
                 className='absolute BenefitsShd top-[550px] left-0 rounded-4xl'
-                loading="lazy"
-                alt="Left decoration"
             />
             <div className='BenefitsBody'>
                 <span className='BenefitsTitle'>Key Benefits</span>
@@ -49,8 +51,12 @@ const Benefits: FC<BenefitsProps> = () => {
                         <div className='BenefitsListItem' key={ind}>
                             <div className='BenefitsListItemNum'>
                                 0{ind + 1}
-                                <img loading='lazy' src='./Benefits/corner.png' className='BenefitsCorner1' />
-                                <img loading='lazy' src='./Benefits/corner.png' className='BenefitsCorner2' />
+                                <SmartImage
+                                    src='./Benefits/corner.png' className='BenefitsCorner1'
+                                />
+                                <SmartImage
+                                    src='./Benefits/corner.png' className='BenefitsCorner2'
+                                />
                             </div>
                             <span className='BenefitsListItemTitle'>{item.title}</span>
                             <span className='BenefitsListItemText mono'>{item.text}</span>

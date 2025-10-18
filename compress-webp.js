@@ -1,27 +1,17 @@
-import fs from 'fs';
-import path from 'path';
-import sharp from 'sharp';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import sharp from "sharp";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Папка с исходными файлами
-const inputFolder = path.join(__dirname, 'public');
+const inputFolder = path.join(__dirname, "public");
+const outputFolder = path.join(__dirname, "public_compressed");
 
-// Папка для сжатых файлов
-const outputFolder = path.join(__dirname, 'publicc');
+const compressExtensions = [".jpg", ".jpeg", ".png", ".webp"];
 
-// Разрешенные форматы для сжатия
-const compressExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
-
-/**
- * Рекурсивная функция обработки папки
- * @param {string} currentInputFolder - текущая папка с исходными файлами
- * @param {string} currentOutputFolder - текущая папка для новых файлов
- */
 async function processFolder(currentInputFolder, currentOutputFolder) {
-    // Создаем папку назначения, если не существует
     if (!fs.existsSync(currentOutputFolder)) {
         fs.mkdirSync(currentOutputFolder, { recursive: true });
     }
@@ -34,37 +24,47 @@ async function processFolder(currentInputFolder, currentOutputFolder) {
         const stats = fs.statSync(inputPath);
 
         if (stats.isDirectory()) {
-            // Рекурсивно заходим в подпапку
             await processFolder(inputPath, outputPath);
         } else {
             const ext = path.extname(file).toLowerCase();
 
             if (compressExtensions.includes(ext)) {
                 try {
-                    let pipeline = sharp(inputPath);
-                    if (ext === '.jpg' || ext === '.jpeg') {
-                        pipeline = pipeline.jpeg({ quality: 20 }); // цель ~50% размера
-                    } else if (ext === '.png') {
-                        pipeline = pipeline.png({ compressionLevel: 9 });
-                    } else if (ext === '.webp') {
-                        pipeline = pipeline.webp({ quality: 20 });
+                    let image = sharp(inputPath).resize({
+                        width: 1920,
+                        withoutEnlargement: true,
+                    });
+
+                    let outputPathFinal = outputPath; // по умолчанию — исходное расширение
+
+                    if (ext === ".jpg" || ext === ".jpeg") {
+                        image = image.jpeg({ quality: 20, mozjpeg: true });
+                    } else if (ext === ".png") {
+                        // Конвертируем PNG в WebP
+                        fs.copyFileSync(inputPath, outputPath);
+                        console.log(`ℹ️ Скопировано: ${outputPath}`);
+                        image = image.webp({ quality: 20 });
+                        outputPathFinal = path.join(
+                            currentOutputFolder,
+                            path.basename(file, ext) + ".webp"
+                        );
+                    } else if (ext === ".webp") {
+                        image = image.webp({ quality: 20 });
                     }
 
-                    await pipeline.toFile(outputPath);
-                    console.log(`Сжат: ${outputPath}`);
+                    await image.toFile(outputPathFinal);
+                    console.log(`✅ Сжат и сохранён: ${outputPathFinal}`);
                 } catch (err) {
-                    console.error(`Ошибка сжатия ${inputPath}:`, err);
+                    console.error(`❌ Ошибка сжатия ${inputPath}:`, err);
                 }
             } else {
-                // Просто копируем остальные файлы
                 fs.copyFileSync(inputPath, outputPath);
-                console.log(`Скопировано: ${outputPath}`);
+                console.log(`ℹ️ Скопировано: ${outputPath}`);
             }
         }
     }
 }
 
-// Запуск
 processFolder(inputFolder, outputFolder)
-    .then(() => console.log('Обработка завершена!'))
-    .catch(err => console.error(err));
+    .then(() => console.log("🎉 Сжатие завершено!"))
+    .catch((err) => console.error("Ошибка:", err));

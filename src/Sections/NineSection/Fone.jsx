@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SmartImage from '../../Utils/SmartImage'
 
 gsap.registerPlugin(ScrollTrigger)
 const Fone = ({ id, children }) => {
@@ -30,29 +31,43 @@ const Fone = ({ id, children }) => {
     }, [])
     return (
         <div id={id} className='w-screen NineSec min-h-screen h-full relative pt-[30px] overflow-hidden'>
-
-
-            <img src='/Nine/Fone.webp' className='absolute hidden lg:block  2xl:-left-[33%] lg:-left-[36%] -bottom-[32%] z-0 ' />
-            <img src='/Nine/Fone.webp' className='absolute hidden lg:block -bottom-[32%] 2xl:-right-[33%] lg:-right-[36%] z-0 ' />
-            <img src='/Nine/Fone.webp' className='absolute hidden lg:block bottom-[10%] 2xl:-left-[44%] lg:-left-[64%] z-0 ' />
-            <img src='/Nine/Fone.webp' className='absolute hidden lg:block bottom-[10%] 2xl:-right-[44%] lg:-right-[64%] z-0 ' />
+            <SmartImage
+                src='/Nine/Fone.webp' className='absolute hidden lg:block  2xl:-left-[33%] lg:-left-[36%] -bottom-[32%] z-0 '
+            />
+            <SmartImage
+                src='/Nine/Fone.webp' className='absolute hidden lg:block -bottom-[32%] 2xl:-right-[33%] lg:-right-[36%] z-0 '
+            /><SmartImage
+                src='/Nine/Fone.webp' className='absolute hidden lg:block bottom-[10%] 2xl:-left-[44%] lg:-left-[64%] z-0 '
+            /><SmartImage
+                src='/Nine/Fone.webp' className='absolute hidden lg:block bottom-[10%] 2xl:-right-[44%] lg:-right-[64%] z-0 '
+            />
 
             <img
                 ref={lightRef}
                 className="absolute lg:-top-[13%] z-[10] lg:-left-[13%] -left-[15%] -top-[5%]"
                 src="/Nine/Blur.webp"
             />
-            <img
+            <SmartImage
                 className="block md:hidden absolute min-w-[762px] -bottom-[30%] -translate-y-1/2 -translate-x-1/2 left-1/2 m-auto select-none pointer-events-none"
                 src="/Nine/Fone.webp"
             />
 
 
-            <img src='/Seven/Blur.webp' className='absolute hidden lg:block top-[10%]  w-screen' />
-            <img src='/Nine/LeftDirBlur.webp' className='absolute z-20 rotate-90 select-none top-0 -right-[30%] pointer-events-none' />
-            <img src='/Seven/Blur.webp' className='absolute hidden lg:block top-[30%]' />
-            <img src='/nine.webp' className='block md:hidden absolute w-[760px] bottom-[15%]' />
-            <img src='/Nine/Blur.webp' className=' hidden lg:block absolute z-20 rotate-90 select-none top-[10%] -right-[30%] pointer-events-none' />
+            <SmartImage
+                src='/Seven/Blur.webp' className='absolute hidden lg:block top-[10%]  w-screen'
+            />
+            <SmartImage
+                src='/Nine/LeftDirBlur.webp' className='absolute z-20 rotate-90 select-none top-0 -right-[30%] pointer-events-none'
+            />
+            <SmartImage
+                src='/Seven/Blur.webp' className='absolute hidden lg:block top-[30%]'
+            />
+            <SmartImage
+                src='/nine.webp' className='block md:hidden absolute w-[760px] bottom-[15%]'
+            />
+            <SmartImage
+                src='/Nine/Blur.webp' className=' hidden lg:block absolute z-20 rotate-90 select-none top-[10%] -right-[30%] pointer-events-none'
+            />
             {children}
             <div className='absolute BottomTitle px-5 flex sm:max-w-[732px] bottom-0 w-full justify-between -translate-x-1/2 left-1/2 z-20' >
                 {word.map((w, index) => (
