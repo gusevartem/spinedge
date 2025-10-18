@@ -1,25 +1,25 @@
 import SmartImage from "../Utils/SmartImage"
 
 
-const FourFone = ({ id, children, heightBlur }) => {
+const FourFone = ({ id, children }) => {
     return (
         <section
             id={id}
             className="bg-black w-screen h-full relative"
         >
             <SmartImage
-                src="/public/shum.webp"
+                src="/shum.webp"
                 className='fourShum1'
                 alt=""
             />
             <SmartImage
-                src="/public/shum.webp"
+                src="/shum.webp"
                 className='fourShum2'
                 alt=""
             />
             <SmartImage
                 className={`absolute block lg:hidden left-0 min-h-[1662px] select-none pointer-events-none z-0 rounded-4xl`}
-                src="/public/Four/heightBlut.webp"
+                src="/Four/heightBlut.webp"
                 alt="White Blur"
             />
             <div className='FourShadowCenter' />
