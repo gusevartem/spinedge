@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const SmartImage = ({ src, lowSrc, alt = "", className = "" }) => {
+const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
     const [isLowQuality, setIsLowQuality] = useState(false);
     const [isOnline, setIsOnline] = useState(
         typeof navigator !== "undefined" ? navigator.onLine : true
