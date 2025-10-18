@@ -29,7 +29,7 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
 
             // Если /public/ нет — добавляем его в начало
             if (resultSrc.startsWith("/")) {
-                return "/public/low_quality" + resultSrc;
+                return "/low_quality" + resultSrc;
             }
 
             // fallback (например, просто имя файла)
