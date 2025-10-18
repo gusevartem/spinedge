@@ -1,53 +1,37 @@
 import React, { useEffect, useState } from "react";
 
-const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
+const SmartImage = ({ src, alt = "", className = "" }) => {
     const [isLowQuality, setIsLowQuality] = useState(false);
     const [isOnline, setIsOnline] = useState(
         typeof navigator !== "undefined" ? navigator.onLine : true
     );
 
     // --- Генерация lowSrc ---
-    const computedLowSrc = lowSrc || (() => {
-        if (!src) return "";
+    const computedLowSrc = src
+        ? "/low_quality/" + src.replace(/^\/|^\.\//, "") // удаляем ведущий / или ./
+        : "";
 
-        try {
-            let resultSrc = src;
-
-            // Если пути начинаются с './', убираем точку для единообразия
-            if (resultSrc.startsWith("./")) resultSrc = resultSrc.slice(1);
-
-            // Если уже есть low_quality — возвращаем как есть
-            if (resultSrc.includes("/low_quality/")) return resultSrc;
-
-            // Если путь уже содержит /public/ — вставляем low_quality после него
-            if (resultSrc.includes("/public/")) {
-                return resultSrc.replace(
-                    /\/public\//,
-                    "/low_quality/"
-                );
-            }
-
-            // Если /public/ нет — добавляем его в начало
-            if (resultSrc.startsWith("/")) {
-                return "/low_quality" + resultSrc;
-            }
-
-            // fallback (например, просто имя файла)
-            return "/public/low_quality/" + resultSrc;
-        } catch {
-            return src;
-        }
-    })();
+    // --- Функция для детекции Safari ---
+    const isSafari = () => {
+        if (typeof navigator === "undefined") return false;
+        const ua = navigator.userAgent;
+        return /Safari/.test(ua) && !/Chrome|Chromium|Edg|OPR/.test(ua);
+    };
 
     useEffect(() => {
         const checkConnection = () => {
-            if ("connection" in navigator) {
+            if (isSafari()) {
+                // В Safari всегда low-quality
+                setIsLowQuality(true);
+            } else if ("connection" in navigator && navigator.connection) {
                 const connection = navigator.connection;
                 const slow =
                     connection.effectiveType === "2g" ||
                     connection.effectiveType === "3g" ||
                     connection.downlink < 1;
                 setIsLowQuality(slow);
+            } else {
+                setIsLowQuality(false);
             }
         };
 
@@ -59,7 +43,7 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
 
         window.addEventListener("online", handleOnline);
         window.addEventListener("offline", handleOffline);
-        if ("connection" in navigator)
+        if ("connection" in navigator && navigator.connection)
             navigator.connection.addEventListener("change", checkConnection);
 
         checkConnection();
@@ -67,7 +51,7 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
         return () => {
             window.removeEventListener("online", handleOnline);
             window.removeEventListener("offline", handleOffline);
-            if ("connection" in navigator)
+            if ("connection" in navigator && navigator.connection)
                 navigator.connection.removeEventListener("change", checkConnection);
         };
     }, []);
@@ -76,14 +60,24 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
         return (
             <div
                 className={`bg-gray-200 text-gray-500 flex items-center justify-center ${className}`}
-                style={{ aspectRatio: "1/1" }}
+                style={{ width: "100%", paddingTop: "100%", position: "relative" }}
             >
-                Нет соединения
+                <span
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    Нет соединения
+                </span>
             </div>
         );
     }
 
-    const imageToShow = isLowQuality ? computedLowSrc || src : src;
+    const imageToShow = isLowQuality ? computedLowSrc : src;
 
     return (
         <img
@@ -91,6 +85,7 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
             src={imageToShow}
             alt={alt}
             className={className}
+            style={{ width: "100%", height: "auto" }}
         />
     );
 };
