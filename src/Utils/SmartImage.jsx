@@ -23,7 +23,7 @@ const SmartImage = ({ src, lowSrc = "", alt = "", className = "" }) => {
             if (resultSrc.includes("/public/")) {
                 return resultSrc.replace(
                     /\/public\//,
-                    "/public/low_quality/"
+                    "/low_quality/"
                 );
             }
 
