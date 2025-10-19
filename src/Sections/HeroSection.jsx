@@ -17,59 +17,41 @@ import s from './styles.module.scss'
 
 
 const HeroSection = () => {
-    //Состояния
     const mainRef = useRef(null);
     const overlayRef = useRef(null);
     const ballRef = useRef(null);
     const navbarRef = useRef(null);
     const toumanRef = useRef(null);
-
     const firstElems = useRef([]);
     const lastLeft = useRef([]);
     const lastRight = useRef([]);
     const superLast = useRef([]);
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-    //const [reorderedSubText, setReorderedSubText] = useState(["200x faster", "1000x cheaper", "500W → 2W per chip", ">$1.2M saving"]);
-
-
-    //Функции
-    const getVisible = useCallback((arr) => arr.filter(el => el && el.offsetParent !== null), []);
-    const circleSize = useMemo(() => isMobile ? 100 : 190, [isMobile]);
-    const handleResize = useCallback(() => {
-        const mobile = window.innerWidth < 768;
-        setIsMobile(mobile);
-        //setReorderedSubText(mobile
-        //? ["200x faster", "500W → 2W per chip", ">$1.2M saving"]
-        //: ["200x faster", "1000x cheaper", "500W → 2W per chip", ">$1.2M saving"]);
-    }, []);
-
+    const getVisible = useCallback(arr => arr.filter(el => el && el.offsetParent !== null), []);
+    const circleSize = useMemo(() => (isMobile ? 100 : 190), [isMobile]);
 
     useEffect(() => {
-        let timeout;
-        const debouncedResize = () => {
-            clearTimeout(timeout);
-            timeout = setTimeout(handleResize, 200);
-        };
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-        window.addEventListener('resize', debouncedResize);
-        handleResize();
+    useEffect(() => {
+        let ctx;
+        requestIdleCallback(async () => {
+            const { runDesktopAnimation } = await import('../Animation/Hero/runDesktopAnimation');
+            const { runMobileAnimation } = await import('../Animation/Hero/runMobileAnimation');
 
-        return () => {
-            window.removeEventListener('resize', debouncedResize);
-            clearTimeout(timeout);
-        };
-    }, [handleResize]);
+            if (isMobile) {
+                ctx = runMobileAnimation({ overlayRef, ballRef, mainRef });
+            } else {
+                ctx = runDesktopAnimation({ overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef }, getVisible);
+            }
+        });
 
-    useGSAP(() => {
-        if (isMobile) {
-            const refs = { overlayRef, ballRef, mainRef };
-            return runMobileAnimation(refs);
-        } else {
-            const refs = { overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef };
-            return runDesktopAnimation(refs, getVisible);
-        }
-    }, [isMobile]);
+        return () => ctx?.revert?.();
+    }, [isMobile, getVisible]);
     //Тест фпса
     /*useEffect(() => {
         let lastTime = performance.now();

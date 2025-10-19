@@ -29,7 +29,6 @@ const list = [
 interface AboutProps { }
 
 const About: FC<AboutProps> = () => {
-
     return (
         <div className='AboutSec' id="about" >
             <SmartImage

@@ -11,16 +11,8 @@ const Benefits = lazy(() => import("./Sections/benefits/Benefits"));
 const About = lazy(() => import("./Sections/about/About"));
 const NineSection = lazy(() => import("./Sections/NineSection/NineSection"));
 
-// Импорт GSAP только нужных модулей
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-gsap.config({
-  force3D: false,
-});
-
 function App() {
+
   return (
     <main id="body">
       <Suspense fallback={<Preloader />}>
