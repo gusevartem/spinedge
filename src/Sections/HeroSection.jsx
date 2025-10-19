@@ -35,18 +35,33 @@ const HeroSection = () => {
 
     useEffect(() => {
         let ctx;
-        requestIdleCallback(async () => {
+
+        // Кроссбраузерный requestIdleCallback
+        const requestIdle = window.requestIdleCallback || function (cb) {
+            return setTimeout(cb, 1); // fallback для Safari
+        };
+        const cancelIdle = window.cancelIdleCallback || function (id) {
+            clearTimeout(id);
+        };
+
+        const idleId = requestIdle(async () => {
             const { runDesktopAnimation } = await import('../Animation/Hero/runDesktopAnimation');
             const { runMobileAnimation } = await import('../Animation/Hero/runMobileAnimation');
 
             if (isMobile) {
                 ctx = runMobileAnimation({ overlayRef, ballRef, mainRef });
             } else {
-                ctx = runDesktopAnimation({ overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef }, getVisible);
+                ctx = runDesktopAnimation(
+                    { overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef },
+                    getVisible
+                );
             }
         });
 
-        return () => ctx?.revert?.();
+        return () => {
+            cancelIdle(idleId);
+            ctx?.revert?.();
+        };
     }, [isMobile, getVisible]);
     //Тест фпса
     /*useEffect(() => {
