@@ -11,56 +11,63 @@ import Code from './Code';
 //Стили
 import s from './styles.module.scss'
 
+import { runDesktopAnimation } from '../Animation/Hero/runDesktopAnimation';
 
+import { runMobileAnimation } from '../Animation/Hero/runMobileAnimation';
 const HeroSection = () => {
+    //Состояния
     const mainRef = useRef(null);
     const overlayRef = useRef(null);
     const ballRef = useRef(null);
     const navbarRef = useRef(null);
     const toumanRef = useRef(null);
+
     const firstElems = useRef([]);
     const lastLeft = useRef([]);
     const lastRight = useRef([]);
     const superLast = useRef([]);
 
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-    const getVisible = useCallback(arr => arr.filter(el => el && el.offsetParent !== null), []);
-    const circleSize = useMemo(() => (isMobile ? 100 : 190), [isMobile]);
+    //const [reorderedSubText, setReorderedSubText] = useState(["200x faster", "1000x cheaper", "500W → 2W per chip", ">$1.2M saving"]);
+
+
+    //Функции
+    const getVisible = useCallback((arr) => arr.filter(el => el && el.offsetParent !== null), []);
+    const circleSize = useMemo(() => isMobile ? 100 : 190, [isMobile]);
+    const handleResize = useCallback(() => {
+        const mobile = window.innerWidth < 768;
+        setIsMobile(mobile);
+        //setReorderedSubText(mobile
+        //? ["200x faster", "500W → 2W per chip", ">$1.2M saving"]
+        //: ["200x faster", "1000x cheaper", "500W → 2W per chip", ">$1.2M saving"]);
+    }, []);
+
 
     useEffect(() => {
-        let ctx;
-
-        // Функция для кроссбраузерного idle
-        const runIdle = async () => {
-            const { runDesktopAnimation } = await import('../Animation/Hero/runDesktopAnimation');
-            const { runMobileAnimation } = await import('../Animation/Hero/runMobileAnimation');
-
-            if (isMobile) {
-                ctx = runMobileAnimation({ overlayRef, ballRef, mainRef });
-            } else {
-                ctx = runDesktopAnimation(
-                    { overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef },
-                    getVisible
-                );
-            }
+        let timeout;
+        const debouncedResize = () => {
+            clearTimeout(timeout);
+            timeout = setTimeout(handleResize, 200);
         };
 
-        if ('requestIdleCallback' in window) {
-            const idleId = window.requestIdleCallback(runIdle);
-            return () => {
-                window.cancelIdleCallback(idleId);
-                ctx?.revert?.();
-            };
+        window.addEventListener('resize', debouncedResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', debouncedResize);
+            clearTimeout(timeout);
+        };
+    }, [handleResize]);
+
+    useGSAP(() => {
+        if (isMobile) {
+            const refs = { overlayRef, ballRef, mainRef };
+            return runMobileAnimation(refs);
         } else {
-            // Safari и все, кто не поддерживает requestIdleCallback
-            // Делаем небольшой timeout, чтобы DOM успел отрендериться
-            const timeoutId = setTimeout(runIdle, 100); // 100мс достаточно
-            return () => {
-                clearTimeout(timeoutId);
-                ctx?.revert?.();
-            };
+            const refs = { overlayRef, firstElems, navbarRef, toumanRef, ballRef, lastLeft, lastRight, superLast, mainRef };
+            return runDesktopAnimation(refs, getVisible);
         }
-    }, [isMobile, getVisible]);
+    }, [isMobile]);
     //Тест фпса
     /*useEffect(() => {
         let lastTime = performance.now();
