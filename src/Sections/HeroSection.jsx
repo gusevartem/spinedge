@@ -28,23 +28,10 @@ const HeroSection = () => {
     const circleSize = useMemo(() => (isMobile ? 100 : 190), [isMobile]);
 
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 768);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    useEffect(() => {
         let ctx;
 
-        // Кроссбраузерный requestIdleCallback
-        const requestIdle = window.requestIdleCallback || function (cb) {
-            return setTimeout(cb, 1); // fallback для Safari
-        };
-        const cancelIdle = window.cancelIdleCallback || function (id) {
-            clearTimeout(id);
-        };
-
-        const idleId = requestIdle(async () => {
+        // Функция для кроссбраузерного idle
+        const runIdle = async () => {
             const { runDesktopAnimation } = await import('../Animation/Hero/runDesktopAnimation');
             const { runMobileAnimation } = await import('../Animation/Hero/runMobileAnimation');
 
@@ -56,12 +43,23 @@ const HeroSection = () => {
                     getVisible
                 );
             }
-        });
-
-        return () => {
-            cancelIdle(idleId);
-            ctx?.revert?.();
         };
+
+        if ('requestIdleCallback' in window) {
+            const idleId = window.requestIdleCallback(runIdle);
+            return () => {
+                window.cancelIdleCallback(idleId);
+                ctx?.revert?.();
+            };
+        } else {
+            // Safari и все, кто не поддерживает requestIdleCallback
+            // Делаем небольшой timeout, чтобы DOM успел отрендериться
+            const timeoutId = setTimeout(runIdle, 100); // 100мс достаточно
+            return () => {
+                clearTimeout(timeoutId);
+                ctx?.revert?.();
+            };
+        }
     }, [isMobile, getVisible]);
     //Тест фпса
     /*useEffect(() => {
