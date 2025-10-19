@@ -70,6 +70,14 @@ const HeroSection = () => {
         <FirstFone ref={mainRef} id='main'>
             <div ref={overlayRef} className="absolute inset-0 bg-black z-[150] pointer-events-none" />
             <img src='./shum.webp' className='heroShum absolute' />
+            <OptimizedImage
+                src='./shum.webp'
+                className='heroShum absolute'
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+                style={{ transform: 'translateX(-50%)' }}
+            />
             <NavBar ref={navbarRef} />
             <OptimizedImage
                 ref={toumanRef}

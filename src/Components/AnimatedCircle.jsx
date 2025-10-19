@@ -1,36 +1,33 @@
 import { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
-import animationData from '/public/Ball/compBall.json';
 
 
 const AnimatedCircle = ({ lottieRef, customStyle, width, height, id }) => {
     const animContainerRef = useRef(null);
 
     useEffect(() => {
-        if (!animContainerRef.current) return;
+        let anim;
 
-        // Глобально понизим качество в пользу производительности
-        try { lottie.setQuality('medium'); } catch {}
+        import('/public/Ball/compBall.json').then((module) => {
+            anim = lottie.loadAnimation({
+                container: animContainerRef.current,
+                renderer: 'canvas',
+                loop: true,
+                autoplay: true,
+                animationData: module.default,
+                rendererSettings: {
+                    preserveAspectRatio: 'xMidYMid meet',
+                    clearCanvas: true,
+                    progressiveLoad: true,
+                    hideOnTransparent: true,
+                },
+            });
 
-        const anim = lottie.loadAnimation({
-            container: animContainerRef.current,
-            renderer: 'canvas',
-            loop: true,
-            autoplay: true,
-            animationData,
-            rendererSettings: {
-                preserveAspectRatio: 'xMidYMid meet',
-                clearCanvas: true,
-                progressiveLoad: true,
-                hideOnTransparent: true,
-            },
+            try { anim.setSubframe(false); } catch { }
         });
 
-        // Меньше вычислений на кадр
-        try { anim.setSubframe(false); } catch {}
-
         return () => {
-            try { anim.destroy(); } catch {}
+            try { anim?.destroy(); } catch { }
         };
     }, []);
 
