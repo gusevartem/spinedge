@@ -8,10 +8,6 @@ import AnimatedCircle from '../Components/AnimatedCircle';
 import FirstFone from '../Components/FirstFone';
 import Code from './Code';
 
-//Анимации
-import { runDesktopAnimation } from '../Animation/Hero/runDesktopAnimation';
-import { runMobileAnimation } from '../Animation/Hero/runMobileAnimation';
-
 //Стили
 import s from './styles.module.scss'
 
@@ -79,7 +75,9 @@ const HeroSection = () => {
                 ref={toumanRef}
                 className="absolute z-0 FirstFoneBgSome top-2 left-1/2 max-w-full h-auto select-none pointer-events-none min-w-[485px] min-h-[520px] "
                 src="/Hero/touman.webp"
-                alt="Touman"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
                 style={{ transform: 'translateX(-50%)' }}
             />
 
