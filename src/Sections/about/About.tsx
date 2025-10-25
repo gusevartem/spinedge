@@ -238,6 +238,18 @@ const About: FC<AboutProps> = () => {
                                         <p className='FoundersText mono' >Strategic Sourcing / EMEA Microelectronic fabrication</p>
                                     </div>
                                 </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className='FoundersListItem' >
+                                        <div className='FoundersTopGroup'>
+                                            <img loading='lazy' src='./About/mendel.png' className='FounderImg' />
+                                            <div className='FounderInfo' >
+                                                <span className='FounderInfoTitle' >Avi <br /> Mendelson  </span>
+                                                <span className='FounderInfoSubtitle mono' >Technology Advisor</span>
+                                            </div>
+                                        </div>
+                                        <p className='FoundersText mono' >Tel Aviv University</p>
+                                    </div>
+                                </SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
