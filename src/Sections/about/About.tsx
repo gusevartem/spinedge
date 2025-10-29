@@ -243,8 +243,8 @@ const About: FC<AboutProps> = () => {
                                         <div className='FoundersTopGroup'>
                                             <img loading='lazy' src='./About/mendel.png' className='FounderImg' />
                                             <div className='FounderInfo' >
-                                                <span className='FounderInfoTitle' >Avi <br /> Mendelson  </span>
-                                                <span className='FounderInfoSubtitle mono' >Technology Advisor</span>
+                                                <span className='FounderInfoTitle' >Maria <br /> Lobkova  </span>
+                                                <span className='FounderInfoSubtitle mono' >Lead design engineer</span>
                                             </div>
                                         </div>
                                         <p className='FoundersText mono' >Tel Aviv University</p>
