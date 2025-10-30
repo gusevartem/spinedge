@@ -65,7 +65,7 @@ const NavBar = ({ ref }) => {
     return (
         <div
             ref={ref}
-            className="fixed top-0 left-0 w-full flex items-center justify-center bg-gradient-to-b from-black to-transparent py-6 z-[200] opacity-0"
+            className="fixed top-0 left-0 w-full flex items-center justify-center bg-gradient-to-b from-black to-transparent py-6 z-[200]"
         >
             <div className="flex w-full flex-wrap items-center justify-center 2xl:gap-4 gap-8">
                 {/* Menu rendering based on screen size */}
