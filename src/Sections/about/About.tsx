@@ -74,10 +74,10 @@ const founders2 = [
     },
     {
         img: "./About/mendel.png",
-        firstName: "Maria",
+        firstName: "Dr. Mariia",
         lastName: "Lobkova",
         subTitle: "Lead design engineer",
-        text: "Tel Aviv University",
+        text: "Design and Engineering of Hybrid Spintronic Devices",
     }
 ]
 const founders3 = [
