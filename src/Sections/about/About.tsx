@@ -100,7 +100,7 @@ const founders3 = [
         firstName: "Avi",
         lastName: "Mendelson",
         subTitle: "Technology Advisor",
-        text: "Tel Aviv University",
+        text: "Professor - CS and EE departments Technion, Israel",
     },
     {
         img: "./About/image3.4.png",
